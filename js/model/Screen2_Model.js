@@ -1,13 +1,12 @@
 //DinnerModel Object constructor
-var DinnerModel = function() {
+var Screen2_Model = function() {
  
- 	var numberOfGuests;
-	//TODO Lab 1 implement the data structure that will hold number of guest
-	// and selected dishes for the dinner menu
+ 	var numberOfGuests = document.getElementById("guestNumber").value;
+	var foodType = document.getElementById("foodType").value;
 
 
-	this.setNumberOfGuests = function(num) {
-		this.numberOfGuests = num;
+	this.setNumberOfGuests = function(numberOfGuests) {
+		this.numberOfGuests = numberOfGuests;
 	}
 	
 	this.getNumberOfGuests = function() {
@@ -16,7 +15,7 @@ var DinnerModel = function() {
 
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function(type) {
-		//TODO Lab 1
+		console.log("foodType");
 	}
 
 	//Returns all the dishes on the menu.

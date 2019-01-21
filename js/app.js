@@ -1,9 +1,9 @@
 $(function() {
 	//We instantiate our model
-	var model = new DinnerModel();
+	var model = new Screen2_Model();
 	
 	// And create the instance of ExampleView
-	var exampleView = new ExampleView($("#exampleView"));
+	var screen2View = new screen2View($("#screen2View"));
 
 	/**
 	 * IMPORTANT: app.js is the only place where you are allowed to
