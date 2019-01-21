@@ -1,9 +1,9 @@
 window.onload= function() {
 	//We instantiate our model
-	const model = new DinnerModel();
+	const model = new Screen_Two_Model();
 	
 	// And create the instance of ExampleView
-	const exampleView = new ExampleView(document.querySelector("#exampleView"));
+	const screenTwoView = new ScreenTwoView(document.querySelector("#ScreenTwoView"));
 
 	/**
 	 * IMPORTANT: app.js is the only place where you are allowed to
