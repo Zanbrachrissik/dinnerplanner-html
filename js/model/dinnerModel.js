@@ -14,7 +14,7 @@ class DinnerModel {
 	}
 	
 	getNumberOfGuests() {
-		//TODO Lab 1
+		console.log("dslkfj");
 	}
 
 	//Returns the dish that is on the menu for selected type 

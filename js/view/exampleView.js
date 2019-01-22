@@ -49,7 +49,7 @@ class ExampleView {
 	 * Here we use numberOfGuests that is a reference to <span>
 	 * in our view to dynamically set it's value to "Hello World".
 	 */
-	this.numberOfGuests.innerHTML="Hello World";
+	this.numberOfGuests.innerHTML= "test";
     }
 
     // in lab 2, the Observer update method will come here

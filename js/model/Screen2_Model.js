@@ -4,7 +4,7 @@ class Screen_Two_Model {
     constructor(){
 	this.dishes=dishesConst; // to be replaced in lab 3
 	
-	var numberOfGuests = document.getElementById("guestNumber").value;
+	var numberOfGuests;
 	var foodType = document.getElementById("foodType").value;
 	//TODO Lab 1 implement the data structure that will hold number of guest
 	// and selected dishes for the dinner menu
@@ -12,7 +12,7 @@ class Screen_Two_Model {
     }
 
 	setNumberOfGuests(num) {
-		//TODO Lab 1
+		numberOfGuests = document.getElementById("guestNumber").value;
 	}
 	
 	getNumberOfGuests() {
