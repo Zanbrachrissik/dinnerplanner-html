@@ -30,7 +30,9 @@ class View_Two {
 	 * in some other view gives the same ID to another element.
 	 * 
 	 */
-	this.numberOfGuests = container.querySelector("#guestNumber");
+	//this.numberOfGuests = container.querySelector("#guestNumber");
+	//var GuestNumber=document.getElementById("guestNumber").value;
+	//console.log(GuestNumber);
 
 	/**
 	 * When we want references to some view elements to be available from outside of view, we 
@@ -42,12 +44,25 @@ class View_Two {
 	 * this button and do something with it (see Lab 2).
 	 * 
 	 */
+	this.plusButton = container.querySelector("#plusGuest");
+	this.minusButton = container.querySelector("#minusGuest");
 	
 	/**
 	 * Here we use numberOfGuests that is a reference to <span>
 	 * in our view to dynamically set it's value to "Hello World".
 	 */
-	this.numberOfGuests.innerHTML=model.getNumberOfGuests();
+	//this.numberOfGuests.innerHTML=model.getNumberOfGuests();
+
+	$("#foodType").change(function() {
+		console.log("dropdown.");
+		console.log(model.getSelectedDish($(this).val()));
+	})
+
+	$("#guestNumber").change(function () {
+		var GuestNumber=document.getElementById("guestNumber").value;
+		console.log(GuestNumber);
+		model.setNumberOfGuests(GuestNumber);
+	})
     }
 
     // in lab 2, the Observer update method will come here

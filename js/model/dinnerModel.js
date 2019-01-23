@@ -4,24 +4,26 @@ class DinnerModel {
     constructor(){
 	this.dishes=dishesConst; // to be replaced in lab 3
 	
-	var numberOfGuests;
-	var foodType = document.getElementById("foodType").value;
+	this.GuestsNumber = 3;
 	//TODO Lab 1 implement the data structure that will hold number of guest
 	// and selected dishes for the dinner menu
 
     }
 
 	setNumberOfGuests(num) {
-		numberOfGuests = document.getElementById("guestNumber").value;
+		this.GuestsNumber = num;
+		console.log(this.GuestsNumber);
 	}
 	
 	getNumberOfGuests() {
-		return "6";
+		console.log("getNumberOfGuests");
+		return this.GuestsNumber;
 	}
 
 	//Returns the dish that is on the menu for selected type 
 	getSelectedDish(type) {
-		//TODO Lab 1
+		return this.getAllDishes(type);
+
 	}
 
 	//Returns all the dishes on the menu.
@@ -55,22 +57,27 @@ class DinnerModel {
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
 	getAllDishes(type,filter) {
-	  return this.dishes.filter(function(dish) {
-		let found = true;
-		if(filter){
-			found = false;
-			dish.ingredients.forEach(function(ingredient) {
-				if(ingredient.name.indexOf(filter)!=-1) {
+		if (type == '') {
+			return this.dishes;
+		}
+		else{
+			return this.dishes.filter(function(dish) {
+			let found = true;
+			if(filter){
+				found = false;
+				dish.ingredients.forEach(function(ingredient) {
+					if(ingredient.name.indexOf(filter)!=-1) {
+						found = true;
+					}
+				});
+				if(dish.name.indexOf(filter) != -1)
+				{
 					found = true;
 				}
-			});
-			if(dish.name.indexOf(filter) != -1)
-			{
-				found = true;
 			}
-		}
-	  	return dish.type == type && found;
-	  });	
+		  	return dish.type == type && found;
+	  });
+		}	
 	}
 
 	//function that returns a dish of specific ID
