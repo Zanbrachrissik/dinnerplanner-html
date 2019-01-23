@@ -4,17 +4,19 @@ class DinnerModel {
     constructor(){
 	this.dishes=dishesConst; // to be replaced in lab 3
 	
+	var numberOfGuests;
+	var foodType = document.getElementById("foodType").value;
 	//TODO Lab 1 implement the data structure that will hold number of guest
 	// and selected dishes for the dinner menu
 
     }
 
 	setNumberOfGuests(num) {
-		//TODO Lab 1
+		numberOfGuests = document.getElementById("guestNumber").value;
 	}
 	
 	getNumberOfGuests() {
-		console.log("dslkfj");
+		return "6";
 	}
 
 	//Returns the dish that is on the menu for selected type 

@@ -12,7 +12,7 @@
  * @param {Object} container - references the HTML parent element that contains the view.
  * @param {Object} model - the reference to the Dinner Model
  */
-class ScreenTwoView {
+class View_Two {
     constructor (container, model) {
 	this.container=container;
 	this.model=model;
@@ -30,7 +30,7 @@ class ScreenTwoView {
 	 * in some other view gives the same ID to another element.
 	 * 
 	 */
-	this.numberOfGuests = container.querySelector("#numberOfGuests");
+	this.numberOfGuests = container.querySelector("#guestNumber");
 
 	/**
 	 * When we want references to some view elements to be available from outside of view, we 
@@ -42,14 +42,12 @@ class ScreenTwoView {
 	 * this button and do something with it (see Lab 2).
 	 * 
 	 */
-	this.plusButton = container.querySelector("#plusGuest");
-	this.minusButton = container.querySelector("#minusGuest");
 	
 	/**
 	 * Here we use numberOfGuests that is a reference to <span>
 	 * in our view to dynamically set it's value to "Hello World".
 	 */
-	this.numberOfGuests.innerHTML="Hello World";
+	this.numberOfGuests.innerHTML=model.getNumberOfGuests();
     }
 
     // in lab 2, the Observer update method will come here

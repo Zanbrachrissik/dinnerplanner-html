@@ -8,6 +8,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+
 
   </head>
   <body>
@@ -18,17 +20,17 @@
 		<div class="row">
 
 
-			<div class="col-xs-12 col-md-3 navbar navbar-default navbar-fixed-top" role="navigation">
-			  <div class="container">
+			<div class="col-xs-12 col-md-3 navbar navbar-default" role="navigation">
 			   <div class="navbar-header">
+			      <h3 style="display: inline; float: left;">My Dinner</h3>
 			       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 			       <span class="sr-only">Toggle navigation</span>
 			           <span class="glyphicon glyphicon-list"></span>
 			       </button>
 
-			      </div>
+			   </div>
 			      <div class="navbar-collapse collapse">
-			      <h3 style="margin-bottom: 20px">My Dinner</h3>
+			      <!--<h3 style="margin-bottom: 20px">My Dinner</h3>-->
 				<span style="margin-right: 20px">People</span>
 				<select id="guestNumber">
 						<option value="1" selected>1</option>
@@ -48,7 +50,6 @@
 				</div>
 
 			      </div>
-			   </div>
 			</div>
 
 <!--
@@ -120,9 +121,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
 	<!-- The application JavaScript code -->
-	<script src="js/appScreen2.js"></script>
-	<script src="js/model/screen2_Model.js"></script>
-	<script src="js/view/screen2View.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/model/DinnerModel.js"></script>
+	<script src="js/view/View.js"></script>
 	<!-- TODO: Here you should include JS code for your other views -->
   </body>
 </html>

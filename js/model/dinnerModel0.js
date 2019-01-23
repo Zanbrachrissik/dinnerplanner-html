@@ -1,22 +1,20 @@
 //DinnerModel Object constructor
-class Screen_Two_Model {
+class DinnerModel {
 
     constructor(){
 	this.dishes=dishesConst; // to be replaced in lab 3
 	
-	var numberOfGuests;
-	var foodType = document.getElementById("foodType").value;
 	//TODO Lab 1 implement the data structure that will hold number of guest
 	// and selected dishes for the dinner menu
 
     }
 
 	setNumberOfGuests(num) {
-		numberOfGuests = document.getElementById("guestNumber").value;
+		//TODO Lab 1
 	}
 	
 	getNumberOfGuests() {
-		//TODO Lab 1
+		return "5";
 	}
 
 	//Returns the dish that is on the menu for selected type 
