@@ -8,12 +8,37 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
 
   </head>
   <body>
-	<div class="container">
-		<h1>Dinner planner</h1>
-		<div id="exampleView">
+	<div class="container-fluid" id="ScreenThreeView" style="height:100%">
+		<div class="w-100 p-3" style="background-color: #eee;height: 20%">
+			<h1 class="mx-auto" style="text-align: center;">Dinner planner</h1>
+		</div>
+		<div class="row" style="background-color: #eee;height: 80%">
+			<div class="col-md-2" id="sidePane" style="background-color:lightblue">
+				<h1>SidePane</h1>
+			</div>
+			<div class="col-md-10" id="dishDetailsPane" style="background-color:red">
+				<div class="container-fluid" id="detailsContainer">
+					<div class="row" id="descriptionIngredientsRow">
+						<div class="col-md-6" id="Description" style="background-color:blue">
+							<h1>Description</h1>
+						</div>
+						<div class="col-md-6" id="Ingredients" style="background-color:black">
+							<h1>Ingredients</h1>
+						</div>
+					</div>
+					<div class="row" id="PreparationRow">
+						<div class="col-md-12" id="Preparation" style="background-color:blue">
+							<h1>Preparation</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <div id="exampleView">
 			<div>
 				Number of guests: <span id="numberOfGuests"></span>
 			</div>
@@ -21,7 +46,7 @@
           <button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
 				<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
 			</div>
-		</div>
+		</div> -->
 	</div>
 
     <!-- jQuery -->
