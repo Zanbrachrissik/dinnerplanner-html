@@ -7,13 +7,44 @@
     <title>Dinner planner</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
   </head>
   <body>
-	<div class="container">
-		<h1>Dinner planner</h1>
-		<div id="exampleView">
+	<div class="container-fluid" id="ScreenThreeView" style="height:100%">
+		<div class="w-100 p-3" style="background-color: #eee;height: 20%">
+			<h1 class="mx-auto" style="text-align: center;">Dinner planner</h1>
+		</div>
+		<div class="row" style="background-color: #eee;height: 80%">
+			<div class="col-md-2" id="sidePane">
+				<h1>SidePane</h1>
+			</div>
+			<div class="col-md-10" id="dishDetailsPane"">
+				<div class="container-fluid" id="detailsContainer">
+					<div class="row" id="descriptionIngredientsRow">
+						<div class="col-md-6" id="Description">
+							<h2 id = "dishName">Title: Load from JS</h2>
+							<img src="images/bakedbrie.jpg" height="140px" width="140px" style="border-style: solid;" id="dishImage">
+							<p id="dishDescriptionText">Load from JS</p>
+							<p>"In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot."</p>
+							<button type="button" class="btn btn-warning">Back To Search</button>
+						</div>
+						<div class="col-md-6" id="Ingredients">
+							<h2>Ingredients: Load from JS</h2>
+						</div>
+					</div>
+					<div class="row" id="PreparationRow">
+						<div class="col-md-12" id="Preparation">
+							<h2>Preparation</h2>
+							<p id="preparationText">Load from JS</p>
+							<p>"Preheat an oven to 400 degrees F (200 degrees C). Place the beef into a mixing bowl, and season with salt, onion, garlic salt, Italian seasoning, oregano, red pepper flakes, hot pepper sauce, and Worcestershire sauce; mix well. Add the milk, Parmesan cheese, and bread crumbs. Mix until evenly blended, then form into 1 1/2-inch meatballs, and place onto a baking sheet. Bake in the preheated oven until no longer pink in the center, 20 to 25 minutes."</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <div id="exampleView">
 			<div>
 				Number of guests: <span id="numberOfGuests"></span>
 			</div>
@@ -21,7 +52,7 @@
           <button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
 				<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
 			</div>
-		</div>
+		</div> -->
 	</div>
 
     <!-- jQuery -->
@@ -30,7 +61,7 @@
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
 	<!-- The application JavaScript code -->
-	<script src="js/app.js"></script>
+	<script src="js/AppScreen3.js"></script>
 	<script src="js/model/dinnerModel.js"></script>
 	<script src="js/view/exampleView.js"></script>
 	<!-- TODO: Here you should include JS code for your other views -->
