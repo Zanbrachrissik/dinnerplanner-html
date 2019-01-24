@@ -7,12 +7,17 @@ class DinnerModel {
 	this.GuestsNumber = 3;
 	//TODO Lab 1 implement the data structure that will hold number of guest
 	// and selected dishes for the dinner menu
+	var num1 = 4;
 
     }
 
+
 	setNumberOfGuests(num) {
-		this.GuestsNumber = num;
+		//this.GuestsNumber = num;
 		console.log(this.GuestsNumber);
+		//this.num1 = num;
+
+		return this.GuestsNumber;
 	}
 	
 	getNumberOfGuests() {
@@ -340,6 +345,10 @@ class DinnerModel {
 			'price':6
 			}]
 		}
+
 	];
+	 var dinnermodel = new DinnerModel();
+       var a = dinnermodel.setNumberOfGuests(13);
+       console.log(a);
 
 
