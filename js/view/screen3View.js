@@ -51,11 +51,23 @@ class ScreenThreeView {
 	 */
 	// this.numberOfGuests.innerHTML="Hello World";
 
+//UI elements
 	this.description = container.querySelector("#Description")
-	this.ingredients = container.querySelector("#Ingredients")
+	this.dishNameUI = container.querySelector("#dishName")
+	this.dishImage = container.querySelector("#dishImage")
+	this.ingredientsUI = container.querySelector("#Ingredients")
 	this.preparation = container.querySelector("#Preparation")
 
+
+	//Data vars
+	this.dish = model.getDish(1)
+
+	//Assignment
+	this.dishNameUI.innerHTML = dish.name
+
+
     }
+
 
     // in lab 2, the Observer update method will come here
 }

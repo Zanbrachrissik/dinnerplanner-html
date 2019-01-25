@@ -3,7 +3,7 @@ window.onload= function() {
 	const model = new DinnerModel();
 	
 	// And create the instance of ExampleView
-	const exampleView = new ExampleView(document.querySelector("#exampleView"));
+	const exampleView = new ScreenThreeView(document.querySelector("#ScreenThreeView"));
 
 	/**
 	 * IMPORTANT: app.js is the only place where you are allowed to

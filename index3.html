@@ -17,17 +17,50 @@
 			<h1 class="mx-auto" style="text-align: center;">Dinner planner</h1>
 		</div>
 		<div class="row" style="background-color: #eee;height: 80%">
-			<div class="col-md-2" id="sidePane">
+			<!-- <div class="col-md-2" id="sidePane">
 				<h1>SidePane</h1>
+			</div> -->
+			<div class="col-xs-12 col-md-3 navbar navbar-default" role="navigation">
+			   <div class="navbar-header">
+			      <h3 style="display: inline; float: left;">My Dinner</h3>
+			       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			       <span class="sr-only">Toggle navigation</span>
+			           <span class="glyphicon glyphicon-list"></span>
+			       </button>
+
+			   </div>
+			      <div class="navbar-collapse collapse">
+			      <!--<h3 style="margin-bottom: 20px">My Dinner</h3>-->
+				<span style="margin-right: 20px">People</span>
+				<select id="guestNumber">
+						<option value="1" selected>1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+
+				</select>
+				<div class="w-100 p-3" style="background-color: #eee; margin-top: 20px">
+					<p style="display: inline;">Dish Name</p>
+					<p style="display: inline; float: right;">Price</p>
+				</div>
+				<div style="margin-top: 20px;text-align: right;">
+					<span>SEK 0,00</span>
+				</div>
+				<div style="margin: 0px auto;text-align: center;">
+					<button type="button" class="btn btn-secondary btn-lg" style="margin-top: 30px; ">Confirm Dinner</button>
+				</div>
+
+			      </div>
 			</div>
-			<div class="col-md-10" id="dishDetailsPane"">
+			<div class="col-md-9" id="dishDetailsPane"">
 				<div class="container-fluid" id="detailsContainer">
 					<div class="row" id="descriptionIngredientsRow">
 						<div class="col-md-6" id="Description">
-							<h2 id = "dishName">Title: Load from JS</h2>
-							<img src="images/bakedbrie.jpg" height="140px" width="140px" style="border-style: solid;" id="dishImage">
-							<p id="dishDescriptionText">Load from JS</p>
-							<p>"In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot."</p>
+							<h2 id = "dishName">Lasagne</h2>
+							<img src="images/bakedbrie.jpg" height="50%" width="100%" style="border-style: solid;" id="dishImage">
+							<h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacinia efficitur enim nec egestas. Sed pharetra lacus vitae eros feugiat, ut elementum justo laoreet. Aliquam tincidunt, ante a ultricies pulvinar, massa urna porttitor neque, nec mollis augue nisl sit amet enim. Duis accumsan vestibulum ex a lobortis. Nunc sit amet velit scelerisque, tempor felis eu, dapibus ligula. Duis a nulla eget quam ultricies rutrum. Curabitur ornare lorem quis arcu dapibus ultrices. Cras at orci ac metus rutrum lobortis in eu dui. Etiam placerat justo et tortor tincidunt dignissim. Nam dapibus auctor euismod. Mauris consectetur dapibus arcu, consectetur elementum nibh pulvinar in.</h6>
+							<!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacinia efficitur enim nec egestas. Sed pharetra lacus vitae eros feugiat, ut elementum justo laoreet. Aliquam tincidunt, ante a ultricies pulvinar, massa urna porttitor neque, nec mollis augue nisl sit amet enim. Duis accumsan vestibulum ex a lobortis. Nunc sit amet velit scelerisque, tempor felis eu, dapibus ligula. Duis a nulla eget quam ultricies rutrum. Curabitur ornare lorem quis arcu dapibus ultrices. Cras at orci ac metus rutrum lobortis in eu dui. Etiam placerat justo et tortor tincidunt dignissim. Nam dapibus auctor euismod. Mauris consectetur dapibus arcu, consectetur elementum nibh pulvinar in.</p> -->
 							<button type="button" class="btn btn-warning">Back To Search</button>
 						</div>
 						<div class="col-md-6" id="Ingredients">
@@ -37,8 +70,8 @@
 					<div class="row" id="PreparationRow">
 						<div class="col-md-12" id="Preparation">
 							<h2>Preparation</h2>
-							<p id="preparationText">Load from JS</p>
-							<p>"Preheat an oven to 400 degrees F (200 degrees C). Place the beef into a mixing bowl, and season with salt, onion, garlic salt, Italian seasoning, oregano, red pepper flakes, hot pepper sauce, and Worcestershire sauce; mix well. Add the milk, Parmesan cheese, and bread crumbs. Mix until evenly blended, then form into 1 1/2-inch meatballs, and place onto a baking sheet. Bake in the preheated oven until no longer pink in the center, 20 to 25 minutes."</p>
+							<h6 id="preparationText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacinia efficitur enim nec egestas. Sed pharetra lacus vitae eros feugiat, ut elementum justo laoreet. Aliquam tincidunt, ante a ultricies pulvinar, massa urna porttitor neque, nec mollis augue nisl sit amet enim. Duis accumsan vestibulum ex a lobortis. Nunc sit amet velit scelerisque, tempor felis eu, dapibus ligula. Duis a nulla eget quam ultricies rutrum. Curabitur ornare lorem quis arcu dapibus ultrices. Cras at orci ac metus rutrum lobortis in eu dui. Etiam placerat justo et tortor tincidunt dignissim. Nam dapibus auctor euismod. Mauris consectetur dapibus arcu, consectetur elementum nibh pulvinar in.</h6>
+							<!-- <p>"Preheat an oven to 400 degrees F (200 degrees C). Place the beef into a mixing bowl, and season with salt, onion, garlic salt, Italian seasoning, oregano, red pepper flakes, hot pepper sauce, and Worcestershire sauce; mix well. Add the milk, Parmesan cheese, and bread crumbs. Mix until evenly blended, then form into 1 1/2-inch meatballs, and place onto a baking sheet. Bake in the preheated oven until no longer pink in the center, 20 to 25 minutes."</p> -->
 						</div>
 					</div>
 				</div>
@@ -63,7 +96,7 @@
 	<!-- The application JavaScript code -->
 	<script src="js/AppScreen3.js"></script>
 	<script src="js/model/dinnerModel.js"></script>
-	<script src="js/view/exampleView.js"></script>
+	<script src="js/view/screen3View.js"></script>
 	<!-- TODO: Here you should include JS code for your other views -->
   </body>
 </html>
