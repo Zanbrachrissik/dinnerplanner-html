@@ -47,6 +47,7 @@ class View_Two {
 	this.plusButton = container.querySelector("#plusGuest");
 	this.minusButton = container.querySelector("#minusGuest");
 	
+	model.addObserver(this);
 	/**
 	 * Here we use numberOfGuests that is a reference to <span>
 	 * in our view to dynamically set it's value to "Hello World".

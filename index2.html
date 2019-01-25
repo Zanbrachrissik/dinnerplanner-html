@@ -13,15 +13,15 @@
 
   </head>
   <body>
-	<div class="container-fluid" id="ScreenTwoView">
+	<div class="container-fluid">
 		<div class="w-100 p-3" style="background-color: #eee;">
 			<h1 class="mx-auto" style="text-align: center;">Dinner planner</h1>
 		</div>
 		<div class="row">
 
 
-			<div class="col-xs-12 col-md-3 navbar navbar-default" role="navigation">
-			   <div class="navbar-header">
+			<div class="col-xs-12 col-md-3 navbar navbar-default" role="navigation"  id="ScreenTwoView">
+			   <div class="navbar-header w-100">
 			      <h3 style="display: inline; float: left;">My Dinner</h3>
 			       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 			       <span class="sr-only">Toggle navigation</span>
@@ -125,5 +125,8 @@
 	<script src="js/model/DinnerModel.js"></script>
 	<script src="js/view/View_Two.js"></script>
 	<!-- TODO: Here you should include JS code for your other views -->
+
+	<!--Controllers-->
+	<script src="js/controllers/sidebarCtrl.js"></script>
   </body>
 </html>

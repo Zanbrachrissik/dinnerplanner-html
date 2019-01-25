@@ -1,12 +1,15 @@
 window.onload= function() {
 	//We instantiate our model
-	const model = new DinnerModel();
+	var model = new DinnerModel();
 	
 	// And create the instance of ExampleView
 	
-			const screenTwoView = new View_Two(document.querySelector("#ScreenTwoView"), model);
+	var screenTwoView = new View_Two(document.querySelector("#ScreenTwoView"), model);
 	
+	var sidebarCtrl = new SidebarCtrl(screenTwoView,model);
 	//const screenFourView = new View_Four(document.querySelector("#ScreenFourView"), model);
+
+    //$("#ScreenTwoView").hide();
 
 	/**
 	 * IMPORTANT: app.js is the only place where you are allowed to

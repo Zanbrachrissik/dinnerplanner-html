@@ -7,21 +7,17 @@ class DinnerModel {
 	this.GuestsNumber = 3;
 	//TODO Lab 1 implement the data structure that will hold number of guest
 	// and selected dishes for the dinner menu
-	var num1 = 4;
+	this._observers = [];
 
     }
 
-
 	setNumberOfGuests(num) {
-		//this.GuestsNumber = num;
+		this.GuestsNumber = num;
 		console.log(this.GuestsNumber);
-		//this.num1 = num;
-
-		return this.GuestsNumber;
 	}
 	
 	getNumberOfGuests() {
-		console.log("getNumberOfGuests");
+		console.log("getNumberOfGuests:"+this.GuestsNumber);
 		return this.GuestsNumber;
 	}
 
@@ -94,7 +90,28 @@ class DinnerModel {
 	    }
 	    return undefined;
 	}
+
+
+
+
+	addObserver(observer){
+		this._observers.push(observer);
+	}
+
+	notifyObservers(arg){
+		for (var i = 0; i < _observers.length; i++) {
+			this._observers[i].update(arg);
+		}
+	}
 }
+
+
+
+	/*****************************************  
+	      Observable implementation    
+	*****************************************/
+
+	
 
 	// the dishes constant contains an array of all the 
 	// dishes in the database. Each dish has id, name, type,
@@ -347,8 +364,4 @@ class DinnerModel {
 		}
 
 	];
-	 var dinnermodel = new DinnerModel();
-       var a = dinnermodel.setNumberOfGuests(13);
-       console.log(a);
-
 
