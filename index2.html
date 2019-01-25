@@ -45,7 +45,10 @@
 					<p style="display: inline; float: right;">Price</p>
 				</div>
 				<div style="margin-top: 20px;text-align: right;">
-					<span>SEK 0,00</span>
+					<span id="totalPrice"></span>
+				</div>
+				<div id="selectedDish">
+					
 				</div>
 				<div style="margin: 0px auto;text-align: center;">
 					<button type="button" class="btn btn-secondary btn-lg" style="margin-top: 30px; ">Confirm Dinner</button>
@@ -111,6 +114,30 @@
 					</div>
 					</div>		
 			</div>
+
+
+			<div class="container-fluid" id="ScreenFourView">
+				<div class="w-100 p-3" style="border-bottom-style: solid;">
+					<p style="display: inline; font-size: 300%">My Dinner: <span id="numberOfGuests"></span> people</p>
+					<button style="display: inline; float: right;vertical-align: center;">Go Back</button>
+				</div>
+				<div class="row" style="margin-top: 50px;">
+					<div class="col-xs-12 col-md-9" style="text-align: center;border-right-style: solid;">
+						<img src="images/icecream.jpg">
+						<p class="mx-auto" style="width: 140px; text-align: center;border-style: solid ">bakedbrie</p>
+					</div>
+					<div class="col-xs-12 col-md-3" style="vertical-align: bottom;text-align: center;">
+						<p>Total Price:</p>
+						<p><span class="totalPrice"></span> SEK</p>
+					</div>
+					
+				</div>
+				<div style="text-align: center;margin-top: 40px;">
+					<button type="button" class="btn btn-primary btn-lg">Print Full Recipe</button>
+				</div>
+			</div>
+
+
 		</div>
 	</div>
 

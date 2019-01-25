@@ -4,16 +4,15 @@ class DinnerModel {
     constructor(){
 	this.dishes=dishesConst; // to be replaced in lab 3
 	
-	this.GuestsNumber = 3;
-	//TODO Lab 1 implement the data structure that will hold number of guest
-	// and selected dishes for the dinner menu
 	this._observers = [];
+	this.menu = [];
 
     }
 
 	setNumberOfGuests(num) {
 		this.GuestsNumber = num;
-		console.log(this.GuestsNumber);
+		console.log("Guests number sets to"+ this.GuestsNumber);
+		this.notifyObservers();
 	}
 	
 	getNumberOfGuests() {
@@ -29,7 +28,7 @@ class DinnerModel {
 
 	//Returns all the dishes on the menu.
 	getFullMenu() {
-		//TODO Lab 1
+		return this.getAllDishes('');
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
@@ -39,18 +38,54 @@ class DinnerModel {
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	getTotalMenuPrice() {
+		var totalPrice=0;
+		this.menu.forEach(function(dish){
+			dish.ingredients.forEach(function(ingredient){
+				totalPrice+=ingredient.price;
+			})
+		})
+		return totalPrice;
 		//TODO Lab 1
 	}
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
-	addDishToMenu(id) {
-		//TODO Lab 1 
+	removeDishFromMenu(id) {
+		this.menu.forEach(function(dish){
+			if (this.dishes.id == id) {
+				var remove = this.menu.indexOf(dish);
+				this.menu.splice(remove,1);
+			}
+			
+		})
+		console.log("addDishToMenu"+this.menu);
+		this.notifyObservers();
+		return 1;
 	}
 
 	//Removes dish from menu
-	removeDishFromMenu(id) {
-		//TODO Lab 1
+	addDishToMenu(id) {
+		if (typeof this.menu.length == 0) {
+			addDishToMenu(id);
+			console.log("Menu is empty.");
+		}
+		else{
+			this.menu.forEach(function(dish){
+				if (dish.id == id) {
+					this.removeDishFromMenu(id);
+
+				}
+				
+			})
+			this.dishes.forEach(function(dish){
+				if (dish.id == id) {
+					this.menu.push(dish);
+				}
+			})
+		}
+		
+		this.notifyObservers();
+		return 1;
 	}
 
     
@@ -99,12 +134,11 @@ class DinnerModel {
 	}
 
 	notifyObservers(arg){
-		for (var i = 0; i < _observers.length; i++) {
+		for (var i = 0; i < this._observers.length; i++) {
 			this._observers[i].update(arg);
 		}
 	}
 }
-
 
 
 	/*****************************************  
@@ -365,3 +399,11 @@ class DinnerModel {
 
 	];
 
+
+
+
+	var test = new DinnerModel();
+	test.addDishToMenu(1);
+	console.log(test.menu);
+	test.addDishToMenu(1);
+	console.log(test.menu);
