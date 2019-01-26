@@ -32,29 +32,32 @@ class View_Two {
 	 * this button and do something with it (see Lab 2).
 	 * 
 	 */
+	 this.update = function(){
+	 	this.numberOfGuests = container.getElementById("numberOfGuests");
+		this.numberOfGuests.innerHTML = model.getNumberOfGuests();
+
+
+		this.totalPrice = container.getElementsByClassName("totalPrice");
+		this.totalPrice[0].innerHTML = model.getTotalMenuPrice();
+		this.totalPrice[1].innerHTML = model.getTotalMenuPrice();
+
+		console.log(this.totalPrice);
+	 }
+	 
+
+
+
+
 	this.plusButton = container.querySelector("#plusGuest");
 	this.minusButton = container.querySelector("#minusGuest");
 	
 	model.addObserver(this);
-	/**
-	 * Here we use numberOfGuests that is a reference to <span>
-	 * in our view to dynamically set it's value to "Hello World".
-	 */
-	//this.numberOfGuests.innerHTML=model.getNumberOfGuests();
 
-	$("#foodType").change(function() {
-		console.log("dropdown.");
-		console.log(model.getSelectedDish($(this).val()));
-	})
-
-	$("#guestNumber").change(function () {
-		var GuestNumber=document.getElementById("guestNumber").value;
-		console.log(GuestNumber);
-		model.setNumberOfGuests(GuestNumber);
-	})
+	
     }
 
-    // in lab 2, the Observer update method will come here
+
+
 }
 
  

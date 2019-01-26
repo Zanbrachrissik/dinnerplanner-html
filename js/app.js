@@ -7,9 +7,22 @@ window.onload= function() {
 	var screenTwoView = new View_Two(document.querySelector("#ScreenTwoView"), model);
 	
 	var sidebarCtrl = new SidebarCtrl(screenTwoView,model);
-	//const screenFourView = new View_Four(document.querySelector("#ScreenFourView"), model);
+	var screenFourView = new View_Four(document.querySelector("#ScreenFourView"), model);
 
-    //$("#ScreenTwoView").hide();
+	var indexPageCtrl = new IndexPageCtrl(screenFourView,model);
+
+
+
+    $("#ScreenTwoView").hide();
+    $("#ScreenFourView").hide();
+    $("#DishSearchView").hide();
+
+
+	var showScreenTwo = function(){
+    $("#ScreenTwoView").show();
+
+	}
+
 
 	/**
 	 * IMPORTANT: app.js is the only place where you are allowed to

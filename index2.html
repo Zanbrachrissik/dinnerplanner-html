@@ -19,6 +19,15 @@
 		</div>
 		<div class="row">
 
+			<div id="indexPage" class="w-100">
+				<div class="mx-auto" style="margin-top: 150px; width: 400px;">
+					<p style="text-align: center;">Welcome! Meredith collects data to deliver the best content, services, and personalized digital ads. We partner with third party advertisers, who may use tracking technologies to collect information about your activity on sites and applications across devices, both on our sites and across the Internet.</p>
+				</div>
+				<div class="mx-auto" style="margin-top: 50px; width: 200px; height: 50px;">
+					<button type="button" class=" mx-auto btn btn-primary btn-lg" id="createDinner">Create New Dinner</button>
+				</div>
+			</div>
+
 
 			<div class="col-xs-12 col-md-3 navbar navbar-default" role="navigation"  id="ScreenTwoView">
 			   <div class="navbar-header w-100">
@@ -45,7 +54,7 @@
 					<p style="display: inline; float: right;">Price</p>
 				</div>
 				<div style="margin-top: 20px;text-align: right;">
-					<span id="totalPrice"></span>
+					<p><span class="totalPrice"></span> SEK</p>
 				</div>
 				<div id="selectedDish">
 					
@@ -81,7 +90,7 @@
 -->
 
 
-			<div class="col-md-9">
+			<div class="col-md-9" id="DishSearchView">
 				<h3 style="margin-bottom: 20px;">Find a dish</h3>
   					<input type="text" placeholder="Enter Key Words">
 
@@ -151,9 +160,12 @@
 	<script src="js/app.js"></script>
 	<script src="js/model/DinnerModel.js"></script>
 	<script src="js/view/View_Two.js"></script>
+	<script src="js/view/View_Four.js"></script>
 	<!-- TODO: Here you should include JS code for your other views -->
 
 	<!--Controllers-->
 	<script src="js/controllers/sidebarCtrl.js"></script>
+	<script src="js/controllers/indexPageCtrl.js"></script>
+
   </body>
 </html>

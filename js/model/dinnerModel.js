@@ -5,87 +5,66 @@ class DinnerModel {
 	this.dishes=dishesConst; // to be replaced in lab 3
 	
 	this._observers = [];
-	this.menu = [];
+	this.menu = new Array();
+
+	this.GuestsNumber = 0;
 
     }
 
 	setNumberOfGuests(num) {
 		this.GuestsNumber = num;
-		console.log("Guests number sets to"+ this.GuestsNumber);
+		console.log("Guests number sets to "+ this.GuestsNumber);
 		this.notifyObservers();
 	}
 	
 	getNumberOfGuests() {
-		console.log("getNumberOfGuests:"+this.GuestsNumber);
 		return this.GuestsNumber;
 	}
 
-	//Returns the dish that is on the menu for selected type 
 	getSelectedDish(type) {
 		return this.getAllDishes(type);
 
 	}
 
-	//Returns all the dishes on the menu.
 	getFullMenu() {
-		return this.getAllDishes('');
+		return this.menu;
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
 	getAllIngredients() {
-		//TODO Lab 1
+		var allIngredients = new Array();
+		this.getFullMenu().forEach(function(dish){
+			allIngredients.push(dish.ingredients);
+		})
+		return allIngredients;
 	}
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	getTotalMenuPrice() {
 		var totalPrice=0;
 		this.menu.forEach(function(dish){
+			var singlePrice = 0;
 			dish.ingredients.forEach(function(ingredient){
-				totalPrice+=ingredient.price;
+				singlePrice+=ingredient.price;
 			})
+			totalPrice+=singlePrice;
 		})
-		return totalPrice;
-		//TODO Lab 1
+		var sumPrice = totalPrice * this.GuestsNumber;
+		return sumPrice;
 	}
 
-	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
-	//it is removed from the menu and the new one added.
+
 	removeDishFromMenu(id) {
-		this.menu.forEach(function(dish){
-			if (this.dishes.id == id) {
-				var remove = this.menu.indexOf(dish);
-				this.menu.splice(remove,1);
-			}
-			
-		})
-		console.log("addDishToMenu"+this.menu);
+		var dish = this.getDish(id);
+		var index = this.menu.indexOf(dish);
+		this.menu.splice(index,1);
 		this.notifyObservers();
-		return 1;
 	}
 
-	//Removes dish from menu
 	addDishToMenu(id) {
-		if (typeof this.menu.length == 0) {
-			addDishToMenu(id);
-			console.log("Menu is empty.");
-		}
-		else{
-			this.menu.forEach(function(dish){
-				if (dish.id == id) {
-					this.removeDishFromMenu(id);
-
-				}
-				
-			})
-			this.dishes.forEach(function(dish){
-				if (dish.id == id) {
-					this.menu.push(dish);
-				}
-			})
-		}
-		
+		var dish = this.getDish(id);
+		this.menu.push(dish);
 		this.notifyObservers();
-		return 1;
 	}
 
     
@@ -400,10 +379,20 @@ class DinnerModel {
 	];
 
 
+/*			test code
 
+	var y = new DinnerModel();
+	y.setNumberOfGuests(3);
+	console.log(y.getFullMenu());
 
-	var test = new DinnerModel();
-	test.addDishToMenu(1);
-	console.log(test.menu);
-	test.addDishToMenu(1);
-	console.log(test.menu);
+	y.addDishToMenu(1);
+	y.addDishToMenu(2);
+	y.addDishToMenu(202);
+	console.log(y.getFullMenu());
+	y.removeDishFromMenu(2);
+	console.log(y.getFullMenu());
+
+	console.log(y.getAllIngredients());
+	console.log(y.getTotalMenuPrice());
+
+*/
