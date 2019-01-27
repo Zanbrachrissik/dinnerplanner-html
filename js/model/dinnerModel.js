@@ -39,6 +39,14 @@ class DinnerModel {
 		return allIngredients;
 	}
 
+	getSinglePrice(dish){
+		var singlePrice = 0;
+		dish.ingredients.forEach(function(ingredient){
+			singlePrice += ingredient.price;
+		})
+		return singlePrice;
+	}
+
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	getTotalMenuPrice() {
 		var totalPrice=0;
@@ -73,6 +81,7 @@ class DinnerModel {
 	//if you don't pass any filter all the dishes will be returned
 	getAllDishes(type,filter) {
 		if (type == '') {
+			this.notifyObservers();
 			return this.dishes;
 		}
 		else{
@@ -92,7 +101,7 @@ class DinnerModel {
 			}
 		  	return dish.type == type && found;
 	  });
-		}	
+		}
 	}
 
 	//function that returns a dish of specific ID
@@ -383,16 +392,20 @@ class DinnerModel {
 
 	var y = new DinnerModel();
 	y.setNumberOfGuests(3);
-	console.log(y.getFullMenu());
 
 	y.addDishToMenu(1);
 	y.addDishToMenu(2);
 	y.addDishToMenu(202);
-	console.log(y.getFullMenu());
-	y.removeDishFromMenu(2);
-	console.log(y.getFullMenu());
+	//console.log(y.getAllDishes('starter','French toast'));
+	y.getFullMenu().forEach(function(dish){
+		console.log(y.getSinglePrice(dish));
+	})
 
+
+	
+	console.log(y.getFullMenu());
+	/*y.removeDishFromMenu(2);
 	console.log(y.getAllIngredients());
-	console.log(y.getTotalMenuPrice());
+	console.log(y.getTotalMenuPrice());*/
 
-*/
+

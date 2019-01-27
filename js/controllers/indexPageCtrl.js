@@ -4,7 +4,9 @@ var IndexPageCtrl = function(view, model){
 		console.log("navigate to sidebar view.");
 
     	$("#ScreenTwoView").show();
+    	$("#DishSearchView").show();
     	$("#indexPage").hide(); 
+    	view.search();
 
 	})
 

@@ -29,7 +29,8 @@
 			</div>
 
 
-			<div class="col-xs-12 col-md-3 navbar navbar-default" role="navigation"  id="ScreenTwoView">
+				<!--原来有一个class是navbar-->
+			<div  id="ScreenTwoView" class="col-xs-12 col-md-3 navbar-default" role="navigation" >
 			   <div class="navbar-header w-100">
 			      <h3 style="display: inline; float: left;">My Dinner</h3>
 			       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -49,7 +50,7 @@
 						<option value="5">5</option>
 
 				</select>
-				<div class="w-100 p-3" style="background-color: #eee; margin-top: 20px">
+				<div class="w-100" style="background-color: #eee; margin-top: 20px">
 					<p style="display: inline;">Dish Name</p>
 					<p style="display: inline; float: right;">Price</p>
 				</div>
@@ -92,7 +93,7 @@
 
 			<div class="col-md-9" id="DishSearchView">
 				<h3 style="margin-bottom: 20px;">Find a dish</h3>
-  					<input type="text" placeholder="Enter Key Words">
+  					<input id="dishKeyword" type="text" placeholder="Enter Key Words">
 
 					<select style="width: 250px; margin-left: 20px; margin-right: 20px;" id="foodType">
 						<option value="" selected>All</option>
@@ -101,26 +102,10 @@
 						<option value="dessert">Dessert</option>
 					</select>
 
-					<button type="button" class="btn btn-success">Search</button>
+					<button id="searchButton" type="button" class="btn btn-success">Search</button>
 
 
-					<div class="row" style="margin-top: 40px;">
-					<div class="col-xs-12 col-md-3" style="text-align: center;">
-						<img src="images/bakedbrie.jpg" height="140px" width="140px" style="border-style: solid;">
-						<p class="mx-auto" style="width: 140px; text-align: center;border-style: solid ">bakedbrie</p>
-					</div>
-					<div class="col-xs-12 col-md-3" style="text-align: center;">
-						<img src="images/icecream.jpg">
-						<p class="mx-auto" style="width: 140px; text-align: center;border-style: solid ">bakedbrie</p>
-					</div>
-					<div class="col-xs-12 col-md-3" style="text-align: center;">
-						<img src="images/meatballs.jpg">
-						<p class="mx-auto" style="width: 140px; text-align: center;border-style: solid ">bakedbrie</p>
-					</div>
-					<div class="col-xs-12 col-md-3" style="text-align: center;">
-						<img src="images/toast.jpg">
-						<p class="mx-auto" style="width: 140px; text-align: center;border-style: solid ">bakedbrie</p>
-					</div>
+					<div id="showDish" class="row" style="margin-top: 40px;">
 					</div>		
 			</div>
 
@@ -161,11 +146,14 @@
 	<script src="js/model/DinnerModel.js"></script>
 	<script src="js/view/View_Two.js"></script>
 	<script src="js/view/View_Four.js"></script>
+	<script src="js/view/DishSearchView.js"></script>
+
 	<!-- TODO: Here you should include JS code for your other views -->
 
 	<!--Controllers-->
 	<script src="js/controllers/sidebarCtrl.js"></script>
 	<script src="js/controllers/indexPageCtrl.js"></script>
+	<script src="js/controllers/dishSearchViewCtrl.js"></script>
 
   </body>
 </html>

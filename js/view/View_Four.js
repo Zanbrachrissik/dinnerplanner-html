@@ -49,7 +49,7 @@ class View_Four {
 	 * Here we use numberOfGuests that is a reference to <span>
 	 * in our view to dynamically set it's value to "Hello World".
 	 */
-	 console.log(model.getNumberOfGuests());
+	 //console.log(model.getNumberOfGuests());
 	this.numberOfGuests.innerHTML=model.getNumberOfGuests();
     }
 

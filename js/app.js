@@ -5,11 +5,14 @@ window.onload= function() {
 	// And create the instance of ExampleView
 	
 	var screenTwoView = new View_Two(document.querySelector("#ScreenTwoView"), model);
-	
 	var sidebarCtrl = new SidebarCtrl(screenTwoView,model);
+
 	var screenFourView = new View_Four(document.querySelector("#ScreenFourView"), model);
 
-	var indexPageCtrl = new IndexPageCtrl(screenFourView,model);
+	var dishSearchView = new DishSearchView(document.querySelector("#DishSearchView"), model);
+	var dishSearchViewCtrl = new DishSearchViewCtrl(dishSearchView,model);
+
+	var indexPageCtrl = new IndexPageCtrl(dishSearchView,model);
 
 
 

@@ -16,11 +16,9 @@ class View_Two {
     constructor (container, model) {
 	this.container=container;
 	this.model=model;
+	//console.log(container);
+	//console.log(document);
 
-	
-	//this.numberOfGuests = container.querySelector("#guestNumber");
-	//var GuestNumber=document.getElementById("guestNumber").value;
-	//console.log(GuestNumber);
 
 	/**
 	 * When we want references to some view elements to be available from outside of view, we 
@@ -33,23 +31,34 @@ class View_Two {
 	 * 
 	 */
 	 this.update = function(){
-	 	this.numberOfGuests = container.getElementById("numberOfGuests");
+	 	this.numberOfGuests = document.getElementById("numberOfGuests");
 		this.numberOfGuests.innerHTML = model.getNumberOfGuests();
 
 
-		this.totalPrice = container.getElementsByClassName("totalPrice");
+		this.totalPrice = document.getElementsByClassName("totalPrice");
 		this.totalPrice[0].innerHTML = model.getTotalMenuPrice();
 		this.totalPrice[1].innerHTML = model.getTotalMenuPrice();
 
-		console.log(this.totalPrice);
+		if (model.getFullMenu().length !== 0) {
+			model.getFullMenu().forEach(function(dish){
+				var newdiv = document.createElement("div");
+				newdiv.classList.add("w-100");
+
+				var name = document.createElement("p");
+				name.style = "float:left";
+				name.innerHTML = dish.name;
+
+
+				var price = document.createElement("p");
+				price.innerHTML = model.getSinglePrice(dish);
+			})
+			
+		}
+
+		console.log("sidebar/screenTwoView的update功能");
 	 }
 	 
 
-
-
-
-	this.plusButton = container.querySelector("#plusGuest");
-	this.minusButton = container.querySelector("#minusGuest");
 	
 	model.addObserver(this);
 
