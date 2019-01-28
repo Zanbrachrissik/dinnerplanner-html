@@ -31,13 +31,8 @@ class SidebarView {
 	 * 
 	 */
 	 this.update = function(){
-	 	this.numberOfGuests = document.getElementById("numberOfGuests");
-		this.numberOfGuests.innerHTML = model.getNumberOfGuests();
-
-
-		this.totalPrice = document.getElementsByClassName("totalPrice");
-		this.totalPrice[0].innerHTML = model.getTotalMenuPrice();
-		this.totalPrice[1].innerHTML = model.getTotalMenuPrice();
+		this.totalPrice = container.querySelector("#totalPrice");
+		this.totalPrice.innerHTML = model.getTotalMenuPrice();
 
 		
 		var myNode = container.querySelector("#selectedDish");
@@ -45,12 +40,14 @@ class SidebarView {
 			// statement
 			myNode.removeChild(myNode.firstChild);
 		}
+		container.querySelector("#ConfirmDinner").style.background = '#A9A9A9';
 
-		
+
+
 		if (model.getFullMenu().length !== 0) {
 			model.getFullMenu().forEach(function(dish){
 				var newdiv = document.createElement("div");
-				newdiv.classList.add("w-100");
+				newdiv.classList.add("col-xs-12");
 
 				var name = document.createElement("p");
 				name.style = "float:left";
@@ -58,14 +55,16 @@ class SidebarView {
 
 
 				var price = document.createElement("p");
+				price.style = "float:right";
 				price.innerHTML = model.getSinglePrice(dish);
 
 				newdiv.appendChild(name);
 				newdiv.appendChild(price);
 
-				var side=container.querySelector("#selectedDish");
-				side.appendChild(newdiv);
+				myNode.appendChild(newdiv);
 			})
+
+			container.querySelector("#ConfirmDinner").style.background = 'orange';
 		
 	}
 

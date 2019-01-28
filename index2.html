@@ -50,18 +50,18 @@
 						<option value="5">5</option>
 
 				</select>
-				<div class="w-100" style="background-color: #eee; margin-top: 20px">
-					<p style="display: inline;">Dish Name</p>
-					<p style="display: inline; float: right;">Price</p>
+				<div class="col-xs-12" style="background-color: #eee; margin-top: 20px;">
+					<p style="float: left;">Dish Name</p>
+					<p style="float: right;">Price</p>
 				</div>
-				<div id="selectedDish">
+				<div id="selectedDish" class="col-xs-12">
 					
 				</div>
-				<div style="margin-top: 20px;text-align: right;">
-					<p><span class="totalPrice"></span> SEK</p>
+				<div style="width:100%; margin-top: 40px;text-align: right;border-top-style: solid;">
+					<p><span id="totalPrice"></span> SEK</p>
 				</div>
 				<div style="margin: 0px auto;text-align: center;">
-					<button type="button" class="btn btn-secondary btn-lg" style="margin-top: 30px; ">Confirm Dinner</button>
+					<button id="ConfirmDinner" type="button" class="btn btn-lg" style="margin-top: 30px; background: #A9A9A9">Confirm Dinner</button>
 				</div>
 
 			      </div>
@@ -97,12 +97,21 @@
 					</div>
 				</div>
 
-				<div class="col-xs-12 col-md-6" id="Ingredients" style="background-color: orange; text-align: center;">
-					<h2>Ingredients</h2>
-					<ul class="tg">
-					    
-					</ul>
-					<button type="button" class="btn btn-primary btn-lg" id="addToMenu">Add to menu</button>
+				<div class="col-xs-12 col-md-6" id="Ingredients" style="background-color: #FFE4B5; text-align: center;">
+					<h2>Ingredients For <span id="guestNumber"></span></h2>
+					
+
+					<div class="row" style="border-top-style: solid;border-bottom-style: solid; ">
+						<div id="div1" class="col-md-2" style="text-align: center"></div>
+						<div id="div2" class="col-md-6" style="text-align: center"></div>
+						<div id="div3" class="col-md-2" style="text-align: center"></div>
+						<div id="div4" class="col-md-2" style="text-align: center"></div>
+					</div>
+
+					<div>
+						<button type="button" class="btn btn-lg" id="addToMenu" style="background: orange">Add to menu</button>
+					</div>
+
 				</div>
 
 				<div class="col-xs-12 w-100" id="Preparation">
