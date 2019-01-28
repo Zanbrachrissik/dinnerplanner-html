@@ -21,7 +21,7 @@ window.onload= function() {
 	$("#SidebarView").hide();
 	$("#DishSearchView").hide();
 	$("#DishDetailsView").hide();
-	//$("#ScreenFourView").hide();
+	$("#ScreenFourView").hide();
 
 
 	var toDishDetailsView = function(){

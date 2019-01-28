@@ -11,8 +11,7 @@ class DishDetailsView{
 			$('#showDish').find('div').each(function(){
 			    var innerDivId = $(this).attr('id');
 			    $(this).click(function(){
-			    	console.log("加入click功能2");
-			    	//toDishDetailsView();
+			    	console.log("加入click功能");
 			    	$("#DishSearchView").hide();
 					$("#DishDetailsView").show();
 			    	model.setCurrentId(innerDivId);

@@ -84,6 +84,7 @@ class DinnerModel {
 
 	setCurrentId(id){
 		this.currentId=id;
+		this.notifyObservers();
 	}
 
     
