@@ -8,6 +8,7 @@ class DinnerModel {
 	this.menu = new Array();
 
 	this.GuestsNumber = 0;
+	this.currentId = 0;
 
     }
 
@@ -75,6 +76,10 @@ class DinnerModel {
 		this.notifyObservers();
 	}
 
+	setCurrentId(id){
+		
+	}
+
     
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
@@ -107,10 +112,10 @@ class DinnerModel {
 	//function that returns a dish of specific ID
 	getDish (id) {
 	    for(let dsh of this.dishes){
-		if(dsh.id == id) {
-		    return dsh;
+			if(dsh.id == id) {
+			    return dsh;
+			}
 		}
-	    }
 	    return undefined;
 	}
 

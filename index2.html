@@ -66,29 +66,7 @@
 
 			      </div>
 			</div>
-<!--
-			<div class="col-xs-12 col-md-3">
-				<h3 style="margin-bottom: 20px">My Dinner</h3>
-				<span style="margin-right: 20px">People</span>
-				<select id="guestNumber">
-						<option value="1" selected>1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-				</select>
-				<div class="w-100 p-3" style="background-color: #eee; margin-top: 20px">
-					<p style="display: inline;">Dish Name</p>
-					<p style="display: inline; float: right;">Price</p>
-				</div>
-				<div style="margin-top: 20px;text-align: right;">
-					<span>SEK 0,00</span>
-				</div>
-				<div style="margin: 0px auto;text-align: center;">
-					<button type="button" class="btn btn-secondary btn-lg" style="margin-top: 30px; ">Confirm Dinner</button>
-				</div>
 
-			</div>
--->
 
 
 			<div class="col-md-9" id="DishSearchView">
@@ -109,11 +87,42 @@
 					</div>		
 			</div>
 
+			<div class="col-md-9" id="DishDetailsView">
+				<div class="col-xs-12 col-md-6" id="Description">
+						<h2 id = "dishName">Lasagne</h2>
+						<img src="images/bakedbrie.jpg" height="50%" width="100%" style="border-style: solid;" id="dishImage">
+						<p style="font-size: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacinia efficitur enim nec egestas. Sed pharetra lacus vitae eros feugiat, ut elementum justo laoreet. Aliquam tincidunt, ante a ultricies pulvinar, massa urna porttitor neque, nec mollis augue nisl sit
+					<div style="margin-top: 50px; width: 200px; height: 50px;">
+						<button id="backToSearch" type="button" class="btn btn-warning">Back To Search</button>
+					</div>
+				</div>
+
+				<div class="col-xs-12 col-md-6" id="Ingredients" style="background-color: orange; text-align: center;">
+					<h2>Ingredients</h2>
+					<ul class="tg">
+					    <li class="tg-0lax">2 tbsp</li>
+					    <li class="tg-0lax">olive oil</li>
+					    <li class="tg-0lax">SEK</li>
+					    <li class="tg-0lax">0.20</li>
+					    <li class="tg-0lax">750g</li>
+					    <li class="tg-0lax">lean beef mince</li>
+					    <li class="tg-0lax">SEK</li>
+					    <li class="tg-0lax">10.00</li>
+					</ul>
+					<button type="button" class="btn btn-primary btn-lg" id="createDinner">Add to menu</button>
+				</div>
+
+				<div class="col-xs-12 w-100" id="Preparation">
+					<h2>Preparation</h2>
+					<p style="font-size: 15px;" id="preparationText">Lorem ipsum dolor sit amet, consectetur </p>
+				</div>
+			</div>
+
 
 			<div class="container-fluid" id="ScreenFourView">
 				<div class="w-100 p-3" style="border-bottom-style: solid;">
 					<p style="display: inline; font-size: 300%">My Dinner: <span id="numberOfGuests"></span> people</p>
-					<button style="display: inline; float: right;vertical-align: center;">Go Back</button>
+					<button id="backButton" style="display: inline; float: right;vertical-align: center;">Go Back</button>
 				</div>
 				<div class="row" style="margin-top: 50px;">
 					<div class="col-xs-12 col-md-9" style="text-align: center;border-right-style: solid;">
@@ -144,9 +153,10 @@
 	<!-- The application JavaScript code -->
 	<script src="js/app.js"></script>
 	<script src="js/model/DinnerModel.js"></script>
-	<script src="js/view/View_Two.js"></script>
+	<script src="js/view/SidebarView.js"></script>
 	<script src="js/view/View_Four.js"></script>
 	<script src="js/view/DishSearchView.js"></script>
+	<script src="js/view/DishDetailsView.js"></script>
 
 	<!-- TODO: Here you should include JS code for your other views -->
 
@@ -154,6 +164,8 @@
 	<script src="js/controllers/sidebarCtrl.js"></script>
 	<script src="js/controllers/indexPageCtrl.js"></script>
 	<script src="js/controllers/dishSearchViewCtrl.js"></script>
+	<script src="js/controllers/DishDetailsViewCtrl.js"></script>
+
 
   </body>
 </html>

@@ -22,8 +22,10 @@ class DishSearchView{
 			this.allDishes.forEach(function(dish){
 				var newdiv = document.createElement("div");
 				newdiv.style = "text-align:center;margin-top:40px;";
+				newdiv.id = dish.id;
 				newdiv.classList.add("col-xs-12");
 				newdiv.classList.add("col-md-3");
+				newdiv.classList.add("newdivClick");
 
 				var img = document.createElement("img");
 				img.src = "images/"+dish.image;
