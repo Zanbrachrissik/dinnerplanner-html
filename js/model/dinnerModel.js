@@ -7,7 +7,7 @@ class DinnerModel {
 	this._observers = [];
 	this.menu = new Array();
 
-	this.GuestsNumber = 0;
+	this.GuestsNumber = 1;
 	this.currentId = 0;
 
     }
@@ -71,13 +71,19 @@ class DinnerModel {
 	}
 
 	addDishToMenu(id) {
+		for(let dsh of this.menu){
+			if(dsh.id == id) {
+			    this.removeDishFromMenu(id);
+			    return;
+			}
+		}
 		var dish = this.getDish(id);
 		this.menu.push(dish);
 		this.notifyObservers();
 	}
 
 	setCurrentId(id){
-		
+		this.currentId=id;
 	}
 
     
@@ -90,6 +96,7 @@ class DinnerModel {
 			return this.dishes;
 		}
 		else{
+			this.notifyObservers();
 			return this.dishes.filter(function(dish) {
 			let found = true;
 			if(filter){

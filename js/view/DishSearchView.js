@@ -15,7 +15,9 @@ class DishSearchView{
 			this.allDishes = model.getAllDishes(type,input)
 			console.log(this.allDishes);
 			
-			var myNode = document.getElementById("showDish");
+			var myNode = container.querySelector("#showDish");
+
+			//或者是 document.getElementId("showDish")  没有“#”
 			while (myNode.firstChild) {
     			myNode.removeChild(myNode.firstChild);
 			}
@@ -25,7 +27,7 @@ class DishSearchView{
 				newdiv.id = dish.id;
 				newdiv.classList.add("col-xs-12");
 				newdiv.classList.add("col-md-3");
-				newdiv.classList.add("newdivClick");
+
 
 				var img = document.createElement("img");
 				img.src = "images/"+dish.image;
@@ -38,12 +40,15 @@ class DishSearchView{
 				newdiv.appendChild(txt);
 				myNode.appendChild(newdiv);
 
+
 			})
+
+			model.notifyObservers();
 		}
 
 
 		this.update = function(){
-			console.log("更新：DishSearchView的update");
+			console.log("搜索页：DishSearchView的update");
 
 
 		}

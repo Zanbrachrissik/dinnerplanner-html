@@ -4,7 +4,7 @@ window.onload= function() {
 	
 	// And create the instance of ExampleView
 	
-	var sidebarView = new SidebarView(document.querySelector("#ScreenTwoView"), model);
+	var sidebarView = new SidebarView(document.querySelector("#SidebarView"), model);
 	var sidebarCtrl = new SidebarCtrl(sidebarView,model);
 
 	var screenFourView = new View_Four(document.querySelector("#ScreenFourView"), model);
@@ -18,14 +18,14 @@ window.onload= function() {
 	var indexPageCtrl = new IndexPageCtrl(dishSearchView,model);
 
 
-	//$("#ScreenTwoView").hide();
-	//$("#DishSearchView").hide();
-	//$("#DishDetailsView").hide();
+	$("#SidebarView").hide();
+	$("#DishSearchView").hide();
+	$("#DishDetailsView").hide();
 	//$("#ScreenFourView").hide();
 
 
 	var toDishDetailsView = function(){
-    	$("#ScreenTwoView").hide();
+    	$("#SidebarView").hide();
     	$("#DishSearchView").hide();
 		$("#DishDetailsView").show();
 	}

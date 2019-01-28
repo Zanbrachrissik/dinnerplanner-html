@@ -30,7 +30,7 @@
 
 
 				<!--原来有一个class是navbar-->
-			<div  id="ScreenTwoView" class="col-xs-12 col-md-3 navbar-default" role="navigation" >
+			<div  id="SidebarView" class="col-xs-12 col-md-3 navbar-default" role="navigation" >
 			   <div class="navbar-header w-100">
 			      <h3 style="display: inline; float: left;">My Dinner</h3>
 			       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -54,11 +54,11 @@
 					<p style="display: inline;">Dish Name</p>
 					<p style="display: inline; float: right;">Price</p>
 				</div>
-				<div style="margin-top: 20px;text-align: right;">
-					<p><span class="totalPrice"></span> SEK</p>
-				</div>
 				<div id="selectedDish">
 					
+				</div>
+				<div style="margin-top: 20px;text-align: right;">
+					<p><span class="totalPrice"></span> SEK</p>
 				</div>
 				<div style="margin: 0px auto;text-align: center;">
 					<button type="button" class="btn btn-secondary btn-lg" style="margin-top: 30px; ">Confirm Dinner</button>
@@ -89,9 +89,9 @@
 
 			<div class="col-md-9" id="DishDetailsView">
 				<div class="col-xs-12 col-md-6" id="Description">
-						<h2 id = "dishName">Lasagne</h2>
-						<img src="images/bakedbrie.jpg" height="50%" width="100%" style="border-style: solid;" id="dishImage">
-						<p style="font-size: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacinia efficitur enim nec egestas. Sed pharetra lacus vitae eros feugiat, ut elementum justo laoreet. Aliquam tincidunt, ante a ultricies pulvinar, massa urna porttitor neque, nec mollis augue nisl sit
+						<h2 id = "dishName"></h2>
+						<img height="50%" width="100%" style="border-style: solid;" id="dishImage">
+						<p id="Intro" style="font-size: 15px;"></p>
 					<div style="margin-top: 50px; width: 200px; height: 50px;">
 						<button id="backToSearch" type="button" class="btn btn-warning">Back To Search</button>
 					</div>
@@ -100,21 +100,14 @@
 				<div class="col-xs-12 col-md-6" id="Ingredients" style="background-color: orange; text-align: center;">
 					<h2>Ingredients</h2>
 					<ul class="tg">
-					    <li class="tg-0lax">2 tbsp</li>
-					    <li class="tg-0lax">olive oil</li>
-					    <li class="tg-0lax">SEK</li>
-					    <li class="tg-0lax">0.20</li>
-					    <li class="tg-0lax">750g</li>
-					    <li class="tg-0lax">lean beef mince</li>
-					    <li class="tg-0lax">SEK</li>
-					    <li class="tg-0lax">10.00</li>
+					    
 					</ul>
-					<button type="button" class="btn btn-primary btn-lg" id="createDinner">Add to menu</button>
+					<button type="button" class="btn btn-primary btn-lg" id="addToMenu">Add to menu</button>
 				</div>
 
 				<div class="col-xs-12 w-100" id="Preparation">
 					<h2>Preparation</h2>
-					<p style="font-size: 15px;" id="preparationText">Lorem ipsum dolor sit amet, consectetur </p>
+					<p style="font-size: 15px;" id="preparationText"></p>
 				</div>
 			</div>
 

@@ -39,6 +39,14 @@ class SidebarView {
 		this.totalPrice[0].innerHTML = model.getTotalMenuPrice();
 		this.totalPrice[1].innerHTML = model.getTotalMenuPrice();
 
+		
+		var myNode = container.querySelector("#selectedDish");
+		while (myNode.firstChild) {
+			// statement
+			myNode.removeChild(myNode.firstChild);
+		}
+
+		
 		if (model.getFullMenu().length !== 0) {
 			model.getFullMenu().forEach(function(dish){
 				var newdiv = document.createElement("div");
@@ -51,9 +59,15 @@ class SidebarView {
 
 				var price = document.createElement("p");
 				price.innerHTML = model.getSinglePrice(dish);
+
+				newdiv.appendChild(name);
+				newdiv.appendChild(price);
+
+				var side=container.querySelector("#selectedDish");
+				side.appendChild(newdiv);
 			})
-			
-		}
+		
+	}
 
 		console.log("sidebar/screenTwoView的update功能");
 	 }
