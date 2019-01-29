@@ -27,6 +27,7 @@ class DishDetailsView{
 		}
 
 		this.showContents = function(){
+
 			container.querySelector("#guestNumber").innerHTML = model.getNumberOfGuests();
 			var guestNumber = model.getNumberOfGuests();
 			var dish=model.getDish(model.currentId);
@@ -51,6 +52,7 @@ class DishDetailsView{
 
 			if(model.currentId !== 0){
 				var prepText = new Array();
+				container.querySelector("#dishName").innerHTML = dish.name;
 				container.querySelector("#Intro").innerHTML = dish.description;
 				dish.ingredients.forEach(function(ingredient){
 					var p1 = document.createElement("p");
