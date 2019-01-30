@@ -10,5 +10,14 @@ var SidebarCtrl = function(view, model){
 		//console.log(GuestNumber);
 		model.setNumberOfGuests(GuestNumber);
 	})
+
+	view.container.querySelector("#ConfirmDinner").onclick = function(){
+		$("#SidebarView").hide();
+		$("#DishSearchView").hide();
+		$("#DishDetailsView").hide();
+		$("#ScreenFourView").show();
+		
+	}
+
 	
 }
