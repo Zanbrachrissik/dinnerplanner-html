@@ -20,6 +20,8 @@ class DishDetailsView{
 			});
 		}
 
+		
+
 		this.toDishDetailsView = function(){
 			$("#SidebarView").hide();
 	    	$("#DishSearchView").hide();

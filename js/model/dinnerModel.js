@@ -48,6 +48,7 @@ class DinnerModel {
 		return singlePrice;
 	}
 
+
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	getTotalMenuPrice() {
 		var totalPrice=0;
