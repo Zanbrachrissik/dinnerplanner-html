@@ -56,6 +56,7 @@ class View_Four {
 			// this.orderedDishes=model.getAllDishes('','');
 			this.orderedDishes=model.menu;
 			var myNode = container.querySelector("#showOrderedDish");
+			myNode.innerHTML = "";
 			this.orderedDishes.forEach(function(dish){
 						var newdiv = document.createElement("div");
 						newdiv.style = "text-align:center;margin-top:40px;";
