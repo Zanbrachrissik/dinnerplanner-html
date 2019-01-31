@@ -28,6 +28,13 @@ class DishSearchView{
 				newdiv.id = dish.id;
 				newdiv.classList.add("col-xs-12");
 				newdiv.classList.add("col-md-3");
+				newdiv.onclick = function () {
+				    console.log("加入click功能");
+			    	$("#DishSearchView").hide();
+					$("#DishDetailsView").show();
+			    	model.setCurrentId(this.id);
+			    	//console.log(innerDivId);
+				}
 
 
 				var img = document.createElement("img");

@@ -1,7 +1,9 @@
 var DishSearchViewCtrl = function(view,model){
-	view.searchButton.click(function(){
+	view.searchButton.onclick = function(){
 		view.search();
-	})
+	}
+
+	/*
 	$('#showDish').find('div').each(function(){
 	    var innerDivId = $(this).attr('id');
 	    $(this).click(function(){
@@ -12,4 +14,5 @@ var DishSearchViewCtrl = function(view,model){
 	    	console.log(innerDivId);
 	    })
 	})
+	*/
 }
