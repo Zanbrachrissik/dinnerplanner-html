@@ -1,4 +1,4 @@
-var SidebarCtrl = function(view, model){
+var SidebarCtrl = function(view, model, navigationDelegate){
 	
 	 $("#foodType").change(function() {
 		//console.log("dropdown.");
@@ -12,11 +12,11 @@ var SidebarCtrl = function(view, model){
 	})
 
 	view.container.querySelector("#ConfirmDinner").onclick = function(){
-		$("#SidebarView").hide();
-		$("#DishSearchView").hide();
-		$("#DishDetailsView").hide();
-		$("#ConfirmPageView").show();
-		
+		// $("#SidebarView").hide();
+		// $("#DishSearchView").hide();
+		// $("#DishDetailsView").hide();
+		// $("#ConfirmPageView").show();
+		navigationDelegate.navigateTo("ConfirmPageView");
 	}
 
 	
