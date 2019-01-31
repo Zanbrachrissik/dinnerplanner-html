@@ -8,16 +8,7 @@ class DishDetailsView{
 		//model.getFullMenu()
 
 		this.attachDetailsView = function(){
-			$('#showDish').find('div').each(function(){
-			    var innerDivId = $(this).attr('id');
-			    $(this).click(function(){
-			    	console.log("加入click功能");
-			    	$("#DishSearchView").hide();
-					$("#DishDetailsView").show();
-			    	model.setCurrentId(innerDivId);
-			    	console.log(innerDivId);
-			    })
-			});
+			
 		}
 
 		
@@ -90,7 +81,7 @@ class DishDetailsView{
 		}
 
 		this.update = function(){
-			this.attachDetailsView();
+			//this.attachDetailsView();
 			this.showContents();
 
 			console.log("详情页 DishDetailsView的update");

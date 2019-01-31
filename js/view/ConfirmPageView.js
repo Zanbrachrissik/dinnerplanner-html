@@ -32,7 +32,7 @@ class ConfirmPageView {
 
 
 						var img = document.createElement("img");
-						img.style = "width: 100%;height:140px";
+						img.style = "";
 						img.src = "images/"+dish.image;
 
 						var txt = document.createElement("p");
@@ -63,7 +63,5 @@ class ConfirmPageView {
     }
 
 
-
-    // in lab 2, the Observer update method will come here
 }
  
