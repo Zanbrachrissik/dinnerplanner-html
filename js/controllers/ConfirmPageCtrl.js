@@ -5,7 +5,7 @@ var ConfirmPageCtrl = function(view, model){
 		$("#SidebarView").show();
 		$("#DishSearchView").show();
 		$("#DishDetailsView").hide();
-		$("#ScreenFourView").hide();
+		$("#ConfirmPageView").hide();
 		
 	}
 
