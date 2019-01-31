@@ -58,58 +58,64 @@ class RecipesView {
 			var myNode = container.querySelector("#OrderedDishRecipes");
 			myNode.innerHTML = ""
 			this.orderedDishes.forEach(function(dish){
-						var imageCol = document.createElement("div");
-						imageCol.style = "text-align:center;margin-top:40px;";
-						imageCol.id = dish.id;
-						imageCol.classList.add("col-xs-12");
-						imageCol.classList.add("col-md-2");
-						var img = document.createElement("img");
-						img.src = "images/"+dish.image;
-						imageCol.appendChild(img);
-						myNode.appendChild(imageCol);
+					var newRow = document.createElement("div");
+					newRow.classList.add("row");
+					newRow.style = "width:100%"
+
+					var imageCol = document.createElement("div");
+					imageCol.style = "text-align:center;margin-top:40px;";
+					imageCol.id = dish.id;
+					imageCol.classList.add("col-xs-12");
+					imageCol.classList.add("col-md-2");
+					var img = document.createElement("img");
+					img.src = "images/"+dish.image;
+					imageCol.appendChild(img);
+					newRow.appendChild(imageCol);
 
 
-						var descCol = document.createElement("div");
-						// descCol.style = "text-align:center;margin-top:40px;";
-						descCol.classList.add("col-xs-12");
-						descCol.classList.add("col-md-4");
+					var descCol = document.createElement("div");
+					// descCol.style = "text-align:center;margin-top:40px;";
+					descCol.classList.add("col-xs-12");
+					descCol.classList.add("col-md-4");
 
-						var titleTxt = document.createElement("h3");
-						titleTxt.innerHTML = dish.name;
-						// titleTxt.style = "width: 140px; text-align: center";
-						titleTxt.classList.add("mx-auto");
-						descCol.appendChild(titleTxt);
+					var titleTxt = document.createElement("h3");
+					titleTxt.innerHTML = dish.name;
+					// titleTxt.style = "width: 140px; text-align: center";
+					titleTxt.classList.add("mx-auto");
+					descCol.appendChild(titleTxt);
 
-						var descTxt = document.createElement("p");
-						descTxt.innerHTML = dish.description;
-						// descTxt.style = "width: 140px; text-align: center";
-						descTxt.classList.add("mx-auto");
-						descCol.appendChild(descTxt);
+					var descTxt = document.createElement("p");
+					descTxt.innerHTML = dish.description;
+					// descTxt.style = "width: 140px; text-align: center";
+					descTxt.classList.add("mx-auto");
+					descCol.appendChild(descTxt);
 
-						myNode.appendChild(descCol);
+					newRow.appendChild(descCol);
 
 
 
-						var prepCol = document.createElement("div");
-						// prepCol.style = "text-align:center;margin-top:40px;";
-						prepCol.classList.add("col-xs-12");
-						prepCol.classList.add("col-md-6");
+					var prepCol = document.createElement("div");
+					// prepCol.style = "text-align:center;margin-top:40px;";
+					prepCol.classList.add("col-xs-12");
+					prepCol.classList.add("col-md-6");
 
-						var prepHeading = document.createElement("h5");
-						prepHeading.innerHTML = "PREPARATION";
-						// titleTxt.style = "width: 140px; text-align: center";
-						prepHeading.classList.add("mx-auto");
-						prepCol.appendChild(prepHeading);
+					var prepHeading = document.createElement("h5");
+					prepHeading.innerHTML = "PREPARATION";
+					// titleTxt.style = "width: 140px; text-align: center";
+					prepHeading.classList.add("mx-auto");
+					prepCol.appendChild(prepHeading);
 
-						var prepTxt = document.createElement("p");
-						prepTxt.innerHTML = dish.description;
-						// prepTxt.style = "width: 140px; text-align: center";
-						prepTxt.classList.add("mx-auto");
-						prepCol.appendChild(prepTxt);
+					var prepTxt = document.createElement("p");
+					prepTxt.innerHTML = dish.description;
+					// prepTxt.style = "width: 140px; text-align: center";
+					prepTxt.classList.add("mx-auto");
+					prepCol.appendChild(prepTxt);
 
-						myNode.appendChild(prepCol);
-						
-					})
+					newRow.appendChild(prepCol);
+
+					myNode.appendChild(newRow);
+					
+				})
 
 
 			var numberOfGuestsNode = container.querySelector("#numberOfGuestsRecipes");
