@@ -100,6 +100,7 @@ class RecipesView {
 					prepCol.classList.add("col-md-6");
 
 					var prepHeading = document.createElement("h5");
+					prepHeading.style="margin-top:30px";
 					prepHeading.innerHTML = "PREPARATION";
 					// titleTxt.style = "width: 140px; text-align: center";
 					prepHeading.classList.add("mx-auto");
