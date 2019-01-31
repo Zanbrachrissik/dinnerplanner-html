@@ -137,11 +137,19 @@
 					
 				</div>
 				<div style="text-align: center;margin-top: 40px;">
-					<button type="button" class="btn btn-primary btn-lg">Print Full Recipe</button>
+					<button type="button" class="btn btn-primary btn-lg" id="printRecipe">Print Full Recipe</button>
 				</div>
 			</div>
 
-
+			<div class="container-fluid" id = "RecipesView">
+				<div class="w-100 p-3" style="border-bottom-style: solid;">
+					<p style="display: inline; font-size: 300%">My Dinner: <span id="numberOfGuestsRecipes"></span></p>
+					<button id="backButton" style="display: inline; float: right;vertical-align: center;">Go Back</button>
+				</div>
+				<!-- <div class="col-xs-12 col-md-12" style="text-align: center;border-right-style: solid;"> -->
+						<div id="OrderedDishRecipes" class="row" style="margin-top: 40px;"></div>
+				<!-- </div> -->
+			</div>
 		</div>
 	</div>
 
@@ -158,6 +166,8 @@
 	<script src="js/view/View_Four.js"></script>
 	<script src="js/view/DishSearchView.js"></script>
 	<script src="js/view/DishDetailsView.js"></script>
+	<script src="js/view/RecipesView.js"></script>
+	
 
 	<!-- TODO: Here you should include JS code for your other views -->
 

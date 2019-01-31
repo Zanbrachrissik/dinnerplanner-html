@@ -18,11 +18,14 @@ window.onload= function() {
 
 	var indexPageCtrl = new IndexPageCtrl(dishSearchView,model);
 
+	var recipesView = new RecipesView(document.querySelector("#RecipesView"), model)
+
 
 	$("#SidebarView").hide();
 	$("#DishSearchView").hide();
 	$("#DishDetailsView").hide();
 	$("#ScreenFourView").hide();
+	// $("#RecipesView").hide();
 
 
 	var toDishDetailsView = function(){
