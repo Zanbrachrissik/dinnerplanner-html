@@ -3,8 +3,8 @@ class DishSearchView{
 	constructor(container,model){
 		this.container=container;
 		this.model=model;
-		this.allDishes=[]
-		this.searchButton = container.querySelector("searchButton");
+		this.allDishes=[];
+		this.searchButton = container.querySelector("#searchButton");
 
 		this.search = function(){
 			var input=document.getElementById("dishKeyword").value;
