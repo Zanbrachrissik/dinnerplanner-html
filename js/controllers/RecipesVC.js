@@ -1,6 +1,5 @@
 var RecipesVC = function(view, model){
 	
-
 	view.container.querySelector("#backButtonRecipesSCreen").onclick = function(){
 		$("#SidebarView").hide();
 		$("#DishSearchView").hide();

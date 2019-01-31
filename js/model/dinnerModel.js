@@ -94,7 +94,7 @@ class DinnerModel {
 	//if you don't pass any filter all the dishes will be returned
 	getAllDishes(type,filter) {
 		if (type == ''&& filter == '') {
-			this.notifyObservers();
+			//this.notifyObservers();
 			return this.dishes;
 		}
 		else{
