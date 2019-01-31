@@ -63,7 +63,7 @@ class RecipesView {
 					newRow.style = "width:100%"
 
 					var imageCol = document.createElement("div");
-					imageCol.style = "text-align:center;margin-top:40px;";
+					imageCol.style = "text-align:center;margin-top:40px;width: 100%;height:100%";
 					imageCol.id = dish.id;
 					imageCol.classList.add("col-xs-12");
 					imageCol.classList.add("col-md-2");

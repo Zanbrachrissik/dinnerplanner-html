@@ -66,11 +66,12 @@ class View_Four {
 
 
 						var img = document.createElement("img");
+						img.style = "width: 100%;height:140px";
 						img.src = "images/"+dish.image;
 
 						var txt = document.createElement("p");
 						txt.innerHTML = dish.name;
-						txt.style = "width: 140px; text-align: center;border-style: solid;margin-left:auto; margin-right:0;";
+						txt.style = "width: 100%; text-align: center;border-style: solid;margin-left:auto; margin-right:0;";
 						// txt.classList.add("mx-auto");
 
 						var price = document.createElement("h4");
