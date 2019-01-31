@@ -10,7 +10,7 @@ window.onload= function() {
 	var screenFourView = new ConfirmPageView(document.querySelector("#ConfirmPageView"), model);
 	var screenFourViewCont = new ConfirmPageCtrl(screenFourView, model, this);
 
-	var dishSearchView = new DishSearchView(document.querySelector("#DishSearchView"), model);
+	var dishSearchView = new DishSearchView(document.querySelector("#DishSearchView"), model,this);
 	var dishSearchViewCtrl = new DishSearchViewCtrl(dishSearchView,model);
 
 	var dishDetailsView = new DishDetailsView(document.querySelector("#DishDetailsView"),model);

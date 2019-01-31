@@ -1,6 +1,6 @@
 class DishSearchView{
 	
-	constructor(container,model){
+	constructor(container,model, navigationDelegate){
 		this.container=container;
 		this.model=model;
 		this.allDishes=[];
@@ -28,26 +28,11 @@ class DishSearchView{
 				newdiv.id = dish.id;
 				newdiv.classList.add("col-xs-12");
 				newdiv.classList.add("col-md-3");
-				newdiv.onclick = function () {
-				    console.log("加入click功能");
-			    	$("#DishSearchView").hide();
-					$("#DishDetailsView").show();
-			    	model.setCurrentId(this.id);
-			    	//console.log(innerDivId);
-				}
 
+				var dishTile = new DishTileView(newdiv,model,dish);
 
-				var img = document.createElement("img");
-				img.src = "images/"+dish.image;
-
-				var txt = document.createElement("p");
-				txt.innerHTML = dish.name;
-				txt.style = "width: 140px; text-align: center;border-style: solid";
-				txt.classList.add("mx-auto");
-				newdiv.appendChild(img);
-				newdiv.appendChild(txt);
 				myNode.appendChild(newdiv);
-
+				var dishTileVC = new DishTileVC(newdiv,model,dish.id,navigationDelegate);
 
 			})
 
