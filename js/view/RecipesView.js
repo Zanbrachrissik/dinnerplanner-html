@@ -74,7 +74,7 @@ class RecipesView {
 						descCol.classList.add("col-xs-12");
 						descCol.classList.add("col-md-4");
 
-						var titleTxt = document.createElement("p");
+						var titleTxt = document.createElement("h3");
 						titleTxt.innerHTML = dish.name;
 						// titleTxt.style = "width: 140px; text-align: center";
 						titleTxt.classList.add("mx-auto");
@@ -94,6 +94,12 @@ class RecipesView {
 						// prepCol.style = "text-align:center;margin-top:40px;";
 						prepCol.classList.add("col-xs-12");
 						prepCol.classList.add("col-md-6");
+
+						var prepHeading = document.createElement("h5");
+						prepHeading.innerHTML = "PREPARATION";
+						// titleTxt.style = "width: 140px; text-align: center";
+						prepHeading.classList.add("mx-auto");
+						prepCol.appendChild(prepHeading);
 
 						var prepTxt = document.createElement("p");
 						prepTxt.innerHTML = dish.description;
