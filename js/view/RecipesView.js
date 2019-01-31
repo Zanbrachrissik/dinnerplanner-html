@@ -29,10 +29,10 @@ class RecipesView {
 					newRow.style = "width:100%"
 
 					var imageCol = document.createElement("div");
-					imageCol.style = "text-align:center;margin-top:40px;width: 100%;height:100%";
+					imageCol.style = "text-align:center;margin-top:20px;";
 					imageCol.id = dish.id;
 					imageCol.classList.add("col-xs-12");
-					imageCol.classList.add("col-md-2");
+					imageCol.classList.add("col-md-3");
 					var img = document.createElement("img");
 					img.src = "images/"+dish.image;
 					imageCol.appendChild(img);
@@ -63,7 +63,7 @@ class RecipesView {
 					var prepCol = document.createElement("div");
 					// prepCol.style = "text-align:center;margin-top:40px;";
 					prepCol.classList.add("col-xs-12");
-					prepCol.classList.add("col-md-6");
+					prepCol.classList.add("col-md-5");
 
 					var prepHeading = document.createElement("h5");
 					prepHeading.style="margin-top:30px";
