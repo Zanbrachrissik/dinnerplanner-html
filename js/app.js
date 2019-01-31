@@ -8,6 +8,7 @@ window.onload= function() {
 	var sidebarCtrl = new SidebarCtrl(sidebarView,model);
 
 	var screenFourView = new View_Four(document.querySelector("#ScreenFourView"), model);
+	var screenFourViewCont = new Screen4Ctrl(screenFourView, model);
 
 	var dishSearchView = new DishSearchView(document.querySelector("#DishSearchView"), model);
 	var dishSearchViewCtrl = new DishSearchViewCtrl(dishSearchView,model);
