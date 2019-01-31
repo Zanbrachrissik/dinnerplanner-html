@@ -93,12 +93,12 @@ class DinnerModel {
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
 	getAllDishes(type,filter) {
-		if (type == '') {
-			this.notifyObservers();
+		if (type == ''&& filter == '') {
+			//this.notifyObservers();
 			return this.dishes;
 		}
 		else{
-			this.notifyObservers();
+			//this.notifyObservers();
 			return this.dishes.filter(function(dish) {
 			let found = true;
 			if(filter){
@@ -410,7 +410,7 @@ class DinnerModel {
 	y.addDishToMenu(1);
 	y.addDishToMenu(2);
 	y.addDishToMenu(202);
-	//console.log(y.getAllDishes('starter','French toast'));
+	console.log(y.getAllDishes('starter','French toast'));
 	y.getFullMenu().forEach(function(dish){
 		console.log(y.getSinglePrice(dish));
 	})

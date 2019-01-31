@@ -12,7 +12,7 @@
  * @param {Object} container - references the HTML parent element that contains the view.
  * @param {Object} model - the reference to the Dinner Model
  */
-class View_Four {
+class ConfirmPageView {
     constructor (container, model) {
 	this.container=container;
 	this.model=model;

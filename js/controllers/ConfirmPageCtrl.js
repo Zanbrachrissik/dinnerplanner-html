@@ -1,10 +1,10 @@
-var Screen4Ctrl = function(view, model){
+var ConfirmPageCtrl = function(view, model){
 	
 
 	view.container.querySelector("#backButtonScreenFour").onclick = function(){
 		$("#SidebarView").show();
-		$("#DishSearchView").hide();
-		$("#DishDetailsView").show();
+		$("#DishSearchView").show();
+		$("#DishDetailsView").hide();
 		$("#ScreenFourView").hide();
 		
 	}
@@ -14,7 +14,7 @@ var Screen4Ctrl = function(view, model){
 		$("#DishSearchView").hide();
 		$("#DishDetailsView").hide();
 		$("#RecipesView").show();
-		$("#ScreenFourView").hide();
+		$("#ConfirmPageView").hide();
 		
 	}
 

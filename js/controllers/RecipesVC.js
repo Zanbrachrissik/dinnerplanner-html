@@ -5,7 +5,7 @@ var RecipesVC = function(view, model){
 		$("#SidebarView").hide();
 		$("#DishSearchView").hide();
 		$("#DishDetailsView").hide();
-		$("#ScreenFourView").show();
+		$("#ConfirmPageView").show();
 		$("#RecipesView").hide();
 	}
 
