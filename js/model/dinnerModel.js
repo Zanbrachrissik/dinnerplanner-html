@@ -2,13 +2,14 @@
 class DinnerModel {
 
     constructor(){
-	this.dishes=dishesConst; // to be replaced in lab 3
+	this.dishes = new Array(); // to be replaced in lab 3
 	
 	this._observers = [];
 	this.menu = new Array();
 
 	this.GuestsNumber = 1;
 	this.currentId = 0;
+	this.dishNumber = 10;
 
     }
 
@@ -41,26 +42,29 @@ class DinnerModel {
 	}
 
 	getSinglePrice(dish){
-		var singlePrice = 0;
-		dish.ingredients.forEach(function(ingredient){
-			singlePrice += ingredient.price;
-		})
-		return singlePrice;
+		
+		return dish.pricePerServing;
 	}
 
 
-	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
-	getTotalMenuPrice() {
+	// getTotalMenuPrice() {
+	// 	var totalPrice=0;
+	// 	this.menu.forEach(function(dish){
+	// 		var singlePrice = 0;
+	// 		dish.ingredients.forEach(function(ingredient){
+	// 			singlePrice+=ingredient.price;
+	// 		})
+	// 		totalPrice+=singlePrice;
+	// 	})
+	// 	var sumPrice = totalPrice * this.GuestsNumber;
+	// 	return sumPrice;
+	// }
+	getTotalMenuPrice(){
 		var totalPrice=0;
 		this.menu.forEach(function(dish){
-			var singlePrice = 0;
-			dish.ingredients.forEach(function(ingredient){
-				singlePrice+=ingredient.price;
-			})
-			totalPrice+=singlePrice;
+			totalPrice += dish.pricePerServing;
 		})
-		var sumPrice = totalPrice * this.GuestsNumber;
-		return sumPrice;
+		return totalPrice;
 	}
 
 
@@ -89,33 +93,74 @@ class DinnerModel {
 	}
 
     
-	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
-	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
-	//if you don't pass any filter all the dishes will be returned
-	getAllDishes(type,filter) {
-		if (type == ''&& filter == '') {
-			//this.notifyObservers();
-			return this.dishes;
-		}
-		else{
-			//this.notifyObservers();
-			return this.dishes.filter(function(dish) {
-			let found = true;
-			if(filter){
-				found = false;
-				dish.ingredients.forEach(function(ingredient) {
-					if(ingredient.name.indexOf(filter)!=-1) {
-						found = true;
-					}
-				});
-				if(dish.name.indexOf(filter) != -1)
-				{
-					found = true;
-				}
-			}
-		  	return dish.type == type && found;
-	  });
-		}
+	// getAllDishes(type,filter) {
+	// 	if (type == ''&& filter == '') {
+	// 		//this.notifyObservers();
+	// 		return this.dishes;
+	// 	}
+	// 	else{
+	// 		//this.notifyObservers();
+	// 		return this.dishes.filter(function(dish) {
+	// 			let found = true;
+	// 			if(filter){
+	// 				found = false;
+	// 				dish.ingredients.forEach(function(ingredient) {
+	// 					if(ingredient.name.indexOf(filter)!=-1) {
+	// 						found = true;
+	// 					}
+	// 				});
+	// 				if(dish.name.indexOf(filter) != -1)
+	// 				{
+	// 					found = true;
+	// 				}
+	// 			}
+	// 		  	return dish.type == type && found;
+	// 	  });
+	// 	}
+	// }
+
+	setDishes(dishes){
+		this.dishes = dishes;
+	}
+
+	getAllDishes(type,filter){
+		return fetch("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=true&instructionsRequired=true&number="+this.dishNumber+"&cuisine="+filter+"&type="+type,{
+		        headers:{   
+		            'X-Mashape-Key': "3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767"
+		        }
+		  })
+		.then(response => response.json())
+		.then(data => data.results)
+		// .catch(error => {
+		// 	console.log(error);
+		// 	var myNode = document.querySelector("#showDish");
+		// 	console.log("failed");
+		// 	while (myNode.firstChild) {
+  //   			myNode.removeChild(myNode.firstChild);
+		// 	};
+
+		// 	var errorDiv = document.createElement("div");
+		// 	errorDiv.style = " width: 100%;text-align:center;margin-top:40px";
+
+		// 	var message = document.createElement("p");
+		// 	message.innerHTML = "Sorry, the food was stolen on its way."
+
+		// 	var image = document.createElement("img");
+		// 	img.src = "errorMessage.gif";
+
+		// 	errorDiv.appendChild(image);
+		// 	errorDiv.appendChild(message);
+		// })
+		// .then(function(data){
+		// 	var menu = new Array();
+		// 	data.results.forEach(function(dish){
+		// 		menu.push(dish);
+		// 	})
+		// 	console.log("DinnerModel里的menu:"+menu);
+		// 	return menu;
+		// })
+		// .then(data => data.dishes)
+		//.then(console.log)
 	}
 
 	//function that returns a dish of specific ID
@@ -422,4 +467,7 @@ class DinnerModel {
 	console.log(y.getAllIngredients());
 	console.log(y.getTotalMenuPrice());*/
 
+
+var a = new DinnerModel();
+a.getAllDishes("vegetarian","main course");
 

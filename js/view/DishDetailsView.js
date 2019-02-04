@@ -5,20 +5,6 @@ class DishDetailsView{
 
 		var dish;
 
-		//model.getFullMenu()
-
-		this.attachDetailsView = function(){
-			
-		}
-
-		
-
-		this.toDishDetailsView = function(){
-			$("#SidebarView").hide();
-	    	$("#DishSearchView").hide();
-			$("#DishDetailsView").show();
-		}
-
 		this.showContents = function(){
 
 			container.querySelector("#guestNumber").innerHTML = model.getNumberOfGuests();
@@ -45,11 +31,12 @@ class DishDetailsView{
 
 			if(model.currentId !== 0){
 				var prepText = new Array();
-				container.querySelector("#dishName").innerHTML = dish.name;
-				container.querySelector("#Intro").innerHTML = dish.description;
-				dish.ingredients.forEach(function(ingredient){
+				container.querySelector("#dishName").innerHTML = dish.title;
+				container.querySelector("#Intro").innerHTML = dish.winePairing.pairingText;
+				console.log(dish);
+				dish.analyzedInstructions[0].steps.forEach(function(ingredient){
 					var p1 = document.createElement("p");
-					p1.innerHTML = ingredient.quantity+' '+ingredient.unit;
+					p1.innerHTML = ingredient.number+' '+ingredient.step;
 					p1.style.marginTop = '10px';
 					
 					div1.appendChild(p1);

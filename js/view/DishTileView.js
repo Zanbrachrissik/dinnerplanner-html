@@ -20,41 +20,19 @@ class DishTileView {
 
 
 	var img = document.createElement("img");
-	img.src = "images/"+dish.image;
-	img.id = "dishTileDiv";
+	img.src = dish.image;
+	img.height = 190;
+	img.width = 190;
+
+	//img.id = "dishTileDiv";
 	var txt = document.createElement("p");
-	txt.innerHTML = dish.name;
-	txt.style = "width: 140px; text-align: center;border-style: solid";
+	txt.innerHTML = dish.title;
+	txt.style = "text-align: center;margin-top:10px;font-style: italic";
 	txt.classList.add("mx-auto");
 
 	container.appendChild(img);
 	container.appendChild(txt);
 
-	/**
-	 * numberOfGuests is a reference to the <span> element that 
-	 * represents the placeholder for where we want to show the number of guests. It's
-	 * a reference to HTML element (wrapped in jQuery object for added benefit of jQuery methods)
-	 * and we can use it to modify <span>, for example to populate it with dynamic data (for now 
-	 * only 'Hello world', but you should change this by end of Lab 1).
-	 * 
-	 * IMPORTANT: Never use document.querySelector() directly in the views. Always use
-	 * some other way of searching only among the containers child elements. In this way you
-	 * make your view code modular and ensure it dosn't break if by mistake somebody else
-	 * in some other view gives the same ID to another element.
-	 * 
-	 */
-	// this.numberOfGuests = container.querySelector("#numberOfGuests");
-
-	/**
-	 * When we want references to some view elements to be available from outside of view, we 
-	 * define them as this.someName. We don't need this in Lab 1 yet, but in Lab 2 it 
-	 * will be important for assigning listeners to these buttons, because the listeners
-	 * should not be assigned in the view, but rather in controller.
-	 * 
-	 * We can then, in some other code, use exampleView.plusButton to reference the 
-	 * this button and do something with it (see Lab 2).
-	 * 
-	 */
 	
 	/**
 	 * Here we use numberOfGuests that is a reference to <span>
