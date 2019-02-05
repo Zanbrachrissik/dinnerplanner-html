@@ -28,16 +28,18 @@ class ConfirmPageView {
 						newdiv.style = "text-align:center;margin-top:40px;";
 						//newdiv.id = dish.id;
 						newdiv.classList.add("col-xs-12");
-						newdiv.classList.add("col-md-3");
+						newdiv.classList.add("col-md-4");
 
 
 						var img = document.createElement("img");
 						//img.style = "width: 100%;height:140px";
-						img.src = "images/"+dish.image;
+						img.src = dish.image;
+						img.height = 150;
+						img.width = 150;
 
 						var txt = document.createElement("p");
-						txt.innerHTML = dish.name;
-						txt.style = "width: 140px; text-align: center;border-style: solid";
+						txt.innerHTML = dish.title;
+						txt.style = "width: 150px; text-align: center;";
 						txt.classList.add("mx-auto");
 
 						var price = document.createElement("h4");

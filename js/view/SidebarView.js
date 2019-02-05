@@ -51,8 +51,7 @@ class SidebarView {
 
 				var name = document.createElement("p");
 				name.style = "float:left";
-				name.innerHTML = dish.name;
-
+				name.innerHTML = dish.title;
 
 				var price = document.createElement("p");
 				price.style = "float:right";
@@ -66,7 +65,7 @@ class SidebarView {
 
 			container.querySelector("#ConfirmDinner").style.background = 'orange';
 		
-	}
+		}
 
 		console.log("sidebar/screenTwoView的update功能");
 	 }

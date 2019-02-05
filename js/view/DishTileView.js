@@ -33,14 +33,7 @@ class DishTileView {
 	container.appendChild(img);
 	container.appendChild(txt);
 
-	
-	/**
-	 * Here we use numberOfGuests that is a reference to <span>
-	 * in our view to dynamically set it's value to "Hello World".
-	 */
-	// this.numberOfGuests.innerHTML= model.getNumberOfGuests();
     }
 
-    // in lab 2, the Observer update method will come here
 }
  

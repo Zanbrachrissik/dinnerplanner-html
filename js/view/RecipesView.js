@@ -19,7 +19,6 @@ class RecipesView {
 
 
 		this.update = function(){
-			// this.orderedDishes=model.getAllDishes('','');
 			this.orderedDishes=model.menu;
 			var myNode = container.querySelector("#OrderedDishRecipes");
 			myNode.innerHTML = ""
@@ -32,9 +31,11 @@ class RecipesView {
 					imageCol.style = "text-align:center;margin-top:20px;";
 					imageCol.id = dish.id;
 					imageCol.classList.add("col-xs-12");
-					imageCol.classList.add("col-md-3");
+					imageCol.classList.add("col-md-4");
 					var img = document.createElement("img");
-					img.src = "images/"+dish.image;
+					img.src = dish.image;
+					img.height = 200;
+					img.width = 200;
 					imageCol.appendChild(img);
 					newRow.appendChild(imageCol);
 
@@ -45,37 +46,38 @@ class RecipesView {
 					descCol.classList.add("col-md-4");
 
 					var titleTxt = document.createElement("h3");
-					titleTxt.innerHTML = dish.name;
+					titleTxt.innerHTML = dish.title;
 					// titleTxt.style = "width: 140px; text-align: center";
 					titleTxt.classList.add("mx-auto");
 					descCol.appendChild(titleTxt);
 
-					var descTxt = document.createElement("p");
-					descTxt.innerHTML = dish.description;
-					// descTxt.style = "width: 140px; text-align: center";
-					descTxt.classList.add("mx-auto");
-					descCol.appendChild(descTxt);
+					// var descTxt = document.createElement("p");
+					// descTxt.innerHTML = dish.description;
+					// // descTxt.style = "width: 140px; text-align: center";
+					// descTxt.classList.add("mx-auto");
+					// descCol.appendChild(descTxt);
 
 					newRow.appendChild(descCol);
 
 
 
 					var prepCol = document.createElement("div");
-					// prepCol.style = "text-align:center;margin-top:40px;";
 					prepCol.classList.add("col-xs-12");
-					prepCol.classList.add("col-md-5");
+					prepCol.classList.add("col-md-4");
 
 					var prepHeading = document.createElement("h5");
 					prepHeading.style="margin-top:30px";
 					prepHeading.innerHTML = "PREPARATION";
-					// titleTxt.style = "width: 140px; text-align: center";
-					prepHeading.classList.add("mx-auto");
 					prepCol.appendChild(prepHeading);
 
-					var prepTxt = document.createElement("p");
-					prepTxt.innerHTML = dish.description;
-					// prepTxt.style = "width: 140px; text-align: center";
-					prepTxt.classList.add("mx-auto");
+					var prepTxt = document.createElement("div");
+					dish.analyzedInstructions[0].steps.forEach(function(step){
+						var p1 = document.createElement("p");
+						p1.innerHTML = step.number+' '+step.step;
+						p1.style.marginTop = '10px';
+						
+						prepTxt.appendChild(p1);
+					})
 					prepCol.appendChild(prepTxt);
 
 					newRow.appendChild(prepCol);
