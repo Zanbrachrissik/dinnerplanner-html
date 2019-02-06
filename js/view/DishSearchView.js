@@ -52,7 +52,7 @@ class DishSearchView{
 
 				var showMore = document.createElement("button");
 				showMore.innerHTML = "Show More";
-				
+
 				var showMoreController = new showMoreController(showMore,model);
 
 				div2.appendChild(showMore);
@@ -86,7 +86,10 @@ class DishSearchView{
 		}
 
 
-		this.update = function(){
+		this.update = function(args){
+			if (args == 'showMore') {
+				this.search();
+			}
 			//console.log("搜索页：DishSearchView的update");
 
 

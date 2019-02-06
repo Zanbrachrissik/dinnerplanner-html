@@ -185,7 +185,7 @@ class DinnerModel {
 
 	showMore(){
 		this.dishNumber += 10;
-		this.notifyObservers();
+		this.notifyObservers('showMore');
 	}
 
 
