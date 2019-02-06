@@ -52,8 +52,9 @@ class DishSearchView{
 
 				var showMore = document.createElement("button");
 				showMore.innerHTML = "Show More";
-
-				var showMoreController = new showMoreController(showMore,model);
+				showMore.onclick = function(){
+					model.showMore();
+				}
 
 				div2.appendChild(showMore);
 				myNode.appendChild(div2);
