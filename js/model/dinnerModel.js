@@ -41,6 +41,15 @@ class DinnerModel {
 		return allIngredients;
 	}
 
+	getDishDetails(){
+		return fetch("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/" + this.currentId+"/information",{
+		        headers:{   
+		            'X-Mashape-Key': "3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767"
+		        }
+		  })
+		.then(response => response.json())
+	}
+
 	getSinglePrice(dish){
 		
 		return dish.pricePerServing;
@@ -172,6 +181,11 @@ class DinnerModel {
 			}
 		}
 	    return undefined;
+	}
+
+	showMore(){
+		this.dishNumber += 10;
+		this.notifyObservers();
 	}
 
 

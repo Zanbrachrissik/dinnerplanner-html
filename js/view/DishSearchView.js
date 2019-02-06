@@ -50,11 +50,11 @@ class DishSearchView{
 				var div2 = document.createElement("div");
 				div2.style = "width:100%;text-align:center;margin-top:40px";
 
-				var showMore = document.createElement("a");
+				var showMore = document.createElement("button");
 				showMore.innerHTML = "Show More";
-				showMore.onfocus = function(){
-					link.style = "font-color: blue";
-				}
+				
+				var showMoreController = new showMoreController(showMore,model);
+
 				div2.appendChild(showMore);
 				myNode.appendChild(div2);
 			})
