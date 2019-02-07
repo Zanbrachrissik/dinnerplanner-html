@@ -16,7 +16,7 @@ class DinnerModel {
 	setNumberOfGuests(num) {
 		this.GuestsNumber = num;
 		console.log("Guests number sets to "+ this.GuestsNumber);
-		this.notifyObservers();
+		this.notifyObservers('GuestsChanged');
 	}
 	
 	getNumberOfGuests() {

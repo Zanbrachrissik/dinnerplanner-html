@@ -122,9 +122,12 @@ class DishDetailsView{
 			
 		}
 
-		this.update = function(){
-			//this.attachDetailsView();
-			this.showContents();
+		this.update = function(args){
+			if (args == 'GuestsChanged') {
+				
+			}else{
+				this.showContents();
+			}
 
 			console.log("详情页 DishDetailsView的update");
 
