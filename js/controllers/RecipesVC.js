@@ -1,6 +1,6 @@
 var RecipesVC = function(view, model, navigationDelegate){
 	
-	view.container.querySelector("#backButtonRecipesSCreen").onclick = function(){
+	view.backButton.onclick = function(){
 		navigationDelegate.navigateTo("ConfirmPageView");
 	}
 

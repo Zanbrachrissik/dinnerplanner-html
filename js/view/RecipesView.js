@@ -16,6 +16,7 @@ class RecipesView {
     constructor (container, model) {
 	this.container=container;
 	this.model=model;
+	this.backButton = container.querySelector("#backButtonRecipesSCreen");
 
 
 		this.update = function(){
