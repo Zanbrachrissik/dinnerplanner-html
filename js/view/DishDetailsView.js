@@ -2,25 +2,26 @@ class DishDetailsView{
 	constructor(container, model){
 		this.container=container;
 		this.model=model;
-		this.dishDetails = new Array();
 		this.backToSearch = container.querySelector("#backToSearch");
 		this.backToMenu = container.querySelector("#addToMenu");
+		this.detailslocalcopy;
+		this.introduction = container.querySelector("#Intro");
+		this.preparation = container.querySelector("#Preparation");
+		this.ingredients = container.querySelector("#ingredients");
 
 		this.showContents = function(){
 
 			var guestNumber = model.getNumberOfGuests();
 			//var dish=model.getDish(model.currentId);
-			var introduction = container.querySelector("#Intro");
-			var preparation = container.querySelector("#Preparation");
-			var ingredients = container.querySelector("#ingredients");
+			
 			container.querySelector("#guestNumber").innerHTML = guestNumber;
 
-			while(introduction.firstChild){
-				introduction.removeChild(introduction.firstChild);
+			while(this.introduction.firstChild){
+				this.introduction.removeChild(this.introduction.firstChild);
 			}
 
-			while(ingredients.firstChild){
-				ingredients.removeChild(ingredients.firstChild);
+			while(this.ingredients.firstChild){
+				this.ingredients.removeChild(this.ingredients.firstChild);
 			}
 
 			var newdiv = document.createElement("div");
@@ -30,16 +31,49 @@ class DishDetailsView{
 			img.style = "vertical-align: middle;"
 
 			newdiv.appendChild(img);
-			introduction.appendChild(newdiv);
-
+			this.introduction.appendChild(newdiv);
 
 			if(model.currentId !== 0){
 				model.getDishDetails().then(dish => {
-					while(introduction.firstChild){
-						introduction.removeChild(introduction.firstChild);
+					this.detailslocalcopy = dish;
+				}).catch(error =>{
+					console.log(error);
+					while(this.introduction.firstChild){
+						this.introduction.removeChild(this.introduction.firstChild);
 					}
-					while(ingredients.firstChild){
-						ingredients.removeChild(ingredients.firstChild);
+					while(this.ingredients.firstChild){
+						this.ingredients.removeChild(this.ingredients.firstChild);
+					}
+
+					var errorDiv = document.createElement("div");
+					errorDiv.style = " width: 100%;text-align:center;margin-top:40px";
+
+					var message = document.createElement("h2");
+					message.innerHTML = "Sorry, the food was stolen on its way."
+
+					var img = document.createElement("img");
+					img.src = "errorMessage.gif";
+					img.style = "vertical-align: middle;width:200px;"
+
+					errorDiv.appendChild(img);
+					errorDiv.appendChild(message);
+					this.introduction.appendChild(errorDiv);
+				})
+			}
+
+			renderFetchedData(this.detailslocalcopy);
+			
+			
+		}
+
+		function renderFetchedData(dish){
+			// if(model.currentId !== 0 && this.detailslocalcopy.length == 0){
+				// model.getDishDetails().then(dish => {
+					while(this.introduction.firstChild){
+						this.introduction.removeChild(this.introduction.firstChild);
+					}
+					while(this.ingredients.firstChild){
+						this.ingredients.removeChild(this.ingredients.firstChild);
 					}
 					console.log(dish);
 					var dishImage = container.querySelector("#dishImage");
@@ -93,38 +127,13 @@ class DishDetailsView{
 					a.innerHTML = "Click Me";
 					a.setAttribute('href',dish.sourceUrl);
 				
-				}).catch(error =>{
-					console.log(error);
-					while(introduction.firstChild){
-						introduction.removeChild(introduction.firstChild);
-					}
-					while(ingredients.firstChild){
-						ingredients.removeChild(ingredients.firstChild);
-					}
-
-					var errorDiv = document.createElement("div");
-					errorDiv.style = " width: 100%;text-align:center;margin-top:40px";
-
-					var message = document.createElement("h2");
-					message.innerHTML = "Sorry, the food was stolen on its way."
-
-					var img = document.createElement("img");
-					img.src = "errorMessage.gif";
-					img.style = "vertical-align: middle;width:200px;"
-
-					errorDiv.appendChild(img);
-					errorDiv.appendChild(message);
-					introduction.appendChild(errorDiv);
-				})
-
-
-			}
-			
+				// }
+			// }
 		}
 
 		this.update = function(args){
 			if (args == 'GuestsChanged') {
-				
+				renderFetchedData(this.detailslocalcopy)
 			}else{
 				this.showContents();
 			}
