@@ -1,20 +1,11 @@
 var ConfirmPageCtrl = function(view, model, navigationDelegate){
 	
 
-	view.container.querySelector("#backButtonScreenFour").onclick = function(){
-		// $("#SidebarView").show();
-		// $("#DishSearchView").show();
-		// $("#DishDetailsView").hide();
-		// $("#ConfirmPageView").hide();
+	view.backToSearchPage.onclick = function(){
 		navigationDelegate.navigateTo("DishSearchView");
 	}
 
-	view.container.querySelector("#printRecipe").onclick = function(){
-		// $("#SidebarView").hide();
-		// $("#DishSearchView").hide();
-		// $("#DishDetailsView").hide();
-		// $("#RecipesView").show();
-		// $("#ConfirmPageView").hide();
+	view.printRecipe.onclick = function(){
 		navigationDelegate.navigateTo("RecipesView");
 		
 	}

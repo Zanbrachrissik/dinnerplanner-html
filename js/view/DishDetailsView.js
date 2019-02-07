@@ -3,6 +3,8 @@ class DishDetailsView{
 		this.container=container;
 		this.model=model;
 		this.dishDetails = new Array();
+		this.backToSearch = container.querySelector("#backToSearch");
+		this.backToMenu = container.querySelector("#addToMenu");
 
 		this.showContents = function(){
 

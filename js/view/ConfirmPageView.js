@@ -16,6 +16,8 @@ class ConfirmPageView {
     constructor (container, model) {
 	this.container=container;
 	this.model=model;
+	this.backToSearchPage = container.querySelector("#backButtonScreenFour");
+	this.printRecipe = container.querySelector("#printRecipe");
 
 
 		this.update = function(){
