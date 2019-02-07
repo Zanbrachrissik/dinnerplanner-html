@@ -36,6 +36,7 @@ class DishDetailsView{
 			if(model.currentId !== 0){
 				model.getDishDetails().then(dish => {
 					this.detailslocalcopy = dish;
+					renderFetchedData(this.detailslocalcopy, this, model);
 				}).catch(error =>{
 					console.log(error);
 					while(this.introduction.firstChild){
@@ -61,19 +62,18 @@ class DishDetailsView{
 				})
 			}
 
-			renderFetchedData(this.detailslocalcopy);
 			
 			
 		}
 
-		function renderFetchedData(dish){
+		function renderFetchedData(dish, view, model){
 			// if(model.currentId !== 0 && this.detailslocalcopy.length == 0){
 				// model.getDishDetails().then(dish => {
-					while(this.introduction.firstChild){
-						this.introduction.removeChild(this.introduction.firstChild);
+					while(view.introduction.firstChild){
+						view.introduction.removeChild(view.introduction.firstChild);
 					}
-					while(this.ingredients.firstChild){
-						this.ingredients.removeChild(this.ingredients.firstChild);
+					while(view.ingredients.firstChild){
+						view.ingredients.removeChild(view.ingredients.firstChild);
 					}
 					console.log(dish);
 					var dishImage = container.querySelector("#dishImage");
@@ -90,10 +90,10 @@ class DishDetailsView{
 						div1.style = "text-align:center";
 						div1.classList.add("col-xs-2");
 						var p1 = document.createElement("p");
-						p1.innerHTML = ingredient.amount + ingredient.unit;
+						p1.innerHTML = ingredient.amount * model.getNumberOfGuests() + ingredient.unit;
 						p1.style.marginTop = '10px';
 						div1.appendChild(p1);
-						ingredients.appendChild(div1);
+						view.ingredients.appendChild(div1);
 
 						var div2 = document.createElement("div");
 						div2.style = "text-align:center";
@@ -102,7 +102,7 @@ class DishDetailsView{
 						p2.innerHTML = ingredient.name;
 						p2.style.marginTop = '10px';
 						div2.appendChild(p2);
-						ingredients.appendChild(div2);
+						view.ingredients.appendChild(div2);
 
 						var div3 = document.createElement("div");
 						div3.style = "text-align:center";
@@ -111,16 +111,16 @@ class DishDetailsView{
 						p3.innerHTML = "SEK";
 						p3.style.marginTop = '10px';
 						div3.appendChild(p3);
-						ingredients.appendChild(div3);
+						view.ingredients.appendChild(div3);
 
 						var div4 = document.createElement("div");
 						div4.style = "text-align:center";
 						div4.classList.add("col-xs-2");
 						var p4 = document.createElement("p");
-						p4.innerHTML = 3 * guestNumber;
+						p4.innerHTML = 3 * model.getNumberOfGuests();
 						p4.style.marginTop = '10px';
 						div4.appendChild(p4);
-						ingredients.appendChild(div4);
+						view.ingredients.appendChild(div4);
 					})
 
 					var a = container.querySelector("#moreInfo");
@@ -133,7 +133,8 @@ class DishDetailsView{
 
 		this.update = function(args){
 			if (args == 'GuestsChanged') {
-				renderFetchedData(this.detailslocalcopy)
+				renderFetchedData(this.detailslocalcopy, this, this.model)
+				container.querySelector("#guestNumber").innerHTML = model.getNumberOfGuests();
 			}else{
 				this.showContents();
 			}
