@@ -13,6 +13,7 @@ class DishDetailsView{
 			var introduction = container.querySelector("#Intro");
 			var preparation = container.querySelector("#Preparation");
 			var ingredients = container.querySelector("#ingredients");
+			container.querySelector("#guestNumber").innerHTML = guestNumber;
 
 			while(introduction.firstChild){
 				introduction.removeChild(introduction.firstChild);
