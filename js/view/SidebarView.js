@@ -16,6 +16,8 @@ class SidebarView {
     constructor (container, model) {
 	this.container=container;
 	this.model=model;
+	this.guestNumberView = container.querySelector("#guestNumber");
+	this.confirmDinnerButton = container.querySelector("#ConfirmDinner");
 	//console.log(container);
 	//console.log(document);
 
