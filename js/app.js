@@ -29,12 +29,6 @@ window.onload= function() {
 	$("#RecipesView").hide();
 
 
-	var toDishDetailsView = function(){
-    	$("#SidebarView").hide();
-    	$("#DishSearchView").hide();
-		$("#DishDetailsView").show();
-	}
-
 	this.navigateTo = function(targetScreen){
 		$("#SidebarView").hide();
 		$("#DishSearchView").hide();
