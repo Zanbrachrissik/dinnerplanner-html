@@ -42,7 +42,7 @@ class DinnerModel {
 	}
 
 	getDishDetails(){
-		return fetch("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/" + this.currentId+"/information",{
+		return fetch("http://sunset.nada.kth.se:8080/iprog/group/48/recipes/" + this.currentId+"/information",{
 		        headers:{   
 		            'X-Mashape-Key': "3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767"
 		        }
@@ -94,7 +94,7 @@ class DinnerModel {
 	}
 
 	getAllDishes(type,filter){
-		return fetch("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=true&instructionsRequired=true&number="+this.dishNumber+"&cuisine="+filter+"&type="+type,{
+		return fetch("http://sunset.nada.kth.se:8080/iprog/group/48/recipes/searchComplex?addRecipeInformation=true&instructionsRequired=true&number="+this.dishNumber+"&cuisine="+filter+"&type="+type,{
 		        headers:{   
 		            'X-Mashape-Key': "3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767"
 		        }
