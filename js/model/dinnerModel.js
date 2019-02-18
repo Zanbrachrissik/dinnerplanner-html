@@ -42,7 +42,6 @@ class DinnerModel {
 		})
 		return allIngredients;
 	}
-
 	getDishDetails(){
 		return fetch("http://sunset.nada.kth.se:8080/iprog/group/48/recipes/" + this.currentId+"/information",{
 		        headers:{   
