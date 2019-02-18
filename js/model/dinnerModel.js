@@ -2,14 +2,16 @@
 class DinnerModel {
 
     constructor(){
-	this.dishes = new Array();
-	
-	this._observers = [];
-	this.menu = new Array();
+		//搜索界面的dishes
+		this.dishes = new Array();
+		
+		this._observers = [];
+		//用户选的menu
+		this.menu = new Array();
 
-	this.GuestsNumber = 1;
-	this.currentId = 0;
-	this.dishNumber = 10;
+		this.GuestsNumber = 1;
+		this.currentId = 0;
+		this.dishNumber = 10;
 
     }
 
